@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins, Lora } from "next/font/google";
 import { siteConfig } from "@/config/site";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -31,7 +34,10 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${poppins.variable} ${lora.variable}`}>
       <body className="min-h-screen bg-cream text-ink font-sans antialiased flex flex-col">
-        {children}
+        <Navbar />
+        <div className="flex-1 flex flex-col">{children}</div>
+        <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );
