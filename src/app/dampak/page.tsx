@@ -65,6 +65,7 @@ export default function DampakPage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <SectionHeading
+            as="h1"
             label="Transparansi &amp; Akuntabilitas"
             title={
               <>

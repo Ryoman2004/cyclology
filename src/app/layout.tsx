@@ -22,8 +22,26 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: `${siteConfig.name} — ${siteConfig.tagline}`,
   description: siteConfig.description,
+  applicationName: siteConfig.name,
+  icons: {
+    icon: "/brand/logo.svg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+  },
+  twitter: {
+    card: "summary",
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+  },
 };
 
 export default function RootLayout({

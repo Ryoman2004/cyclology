@@ -94,6 +94,7 @@ export function Footer() {
                   src="/brand/logo.svg"
                   alt="Logo Cyclology"
                   fill
+                  sizes="32px"
                   className="object-contain brightness-0 invert"
                 />
               </div>

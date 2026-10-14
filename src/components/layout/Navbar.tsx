@@ -66,8 +66,8 @@ export function Navbar({ minimal = false }: NavbarProps) {
               src="/brand/logo.svg"
               alt="Logo Cyclology"
               fill
+              sizes="36px"
               className="object-contain"
-              priority
             />
           </div>
           <span className="text-xl sm:text-2xl font-bold tracking-tight text-moss-600 font-sans">
