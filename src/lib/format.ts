@@ -14,6 +14,17 @@ export function formatRupiah(amount: number): string {
 }
 
 /**
+ * Format angka kilogram ke gaya Indonesia (koma desimal).
+ * Contoh: 0.6 -> "0,6"; 2 -> "2,0"; 0.05 -> "0,05"
+ */
+export function formatKg(kg: number): string {
+  return kg.toLocaleString("id-ID", {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 2,
+  });
+}
+
+/**
  * Format tanggal ISO ke format tanggal Bahasa Indonesia yang rapi.
  * Contoh: "2025-05-14" -> "14 Mei 2025"
  */

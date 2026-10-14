@@ -4,8 +4,8 @@ export const siteConfig = {
   description:
     "Katalog produk daur ulang: tas, dompet, fashion, dekorasi, dan aksesoris karya pengrajin lokal.",
   url: "https://cyclology.vercel.app", // ganti setelah deploy
-  whatsappNumber: "62XXXXXXXXXXX", // format internasional, tanpa + dan tanpa 0 di depan
-  email: "halo@cyclology.example",
+  whatsappNumber: "6285780870274", // format internasional, tanpa + dan tanpa 0 di depan
+  email: "syifaauliaakfina@gmail.com",
   serviceHours: "Senin - Sabtu, 09.00 - 17.00 WIB",
   social: {
     instagram: "#",
@@ -16,7 +16,7 @@ export const siteConfig = {
   impact: {
     totalKgSaved: 1250,
     productsSold: 480,
-    artisans: 12,
+    artisans: 24,
   }, // placeholder, ganti dengan data asli sebelum dipublikasikan
   founders: [
     {
@@ -26,18 +26,18 @@ export const siteConfig = {
       bio: "Kalimat singkat placeholder tentang peran di Cyclology.",
     },
     {
-      name: "Fullan Bin Fullin",
+      name: "Syaza Ghaisani Nadinda",
       role: "Co-Founder",
-      photo: "/images/brand/founder-fullan.webp",
+      photo: "/images/brand/founder-syaza.webp",
       bio: "Kalimat singkat placeholder tentang peran di Cyclology.",
     },
   ],
   // Bagian "Bengkel" di Galeri (peta + alamat). SEMUA DUMMY, diganti pemilik nanti.
   workshop: {
-    name: "Bengkel Upcycle Cyclology",
-    address: "Kasongan, Bantul, D.I. Yogyakarta", // dummy
+    name: "Cyclology",
+    address: "Meruyung, Limo, Depok, Jawa Barat", // dummy
     hours: "Senin - Sabtu, 09.00 - 17.00 WIB", // dummy
-    mapEmbedUrl: "", // isi dengan URL embed Google Maps asli
+    mapEmbedUrl: "https://maps.app.goo.gl/C2JG3fZ35JPS3vXV6", // isi dengan URL embed Google Maps asli
   },
 };
 

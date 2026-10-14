@@ -63,6 +63,7 @@ docs/
     - Jangan memakai klaim penghematan CO₂ (mis. "ton CO₂e"); hapus atau ganti dengan teks netral.
 17. Folder `design/` hanya **acuan visual**, bukan aset situs. Jangan menyalin gambar dari `design/` ke situs dan **jangan memakai URL gambar eksternal** yang muncul di file HTML dari Stitch (bisa kedaluwarsa). Semua gambar situs berupa file lokal di `public/images/...` (nama file = slug) yang dimuat lewat `SafeImage`, sehingga situs tetap rapi bila foto belum ada.
 18. Jika `design/*.png` dan `design/*.html` berbeda, **PNG dari Figma adalah acuan final** (sudah melewati editan pemilik).
+19. Jika desain mobile (`mobile-*.png`) berbeda dari desain desktop atau `SPEC.md` dalam hal teks atau komponen, **`SPEC.md` dan desain desktop menang**; desain mobile hanya dipakai untuk tata letak. Headline hero tetap "Barang bekas, cerita baru."; tombol kartu produk tetap "LIHAT DETAIL"; judul seksi katalog tetap "Produk Katalog"; nama brand "Cyclology" dari `siteConfig`. Jangan membuat bottom navigation bar maupun kartu "traceability" atau "transparansi". Navigasi mobile = hamburger/drawer + tombol WhatsApp mengambang.
 
 ## Larangan gaya ("AI slop")
 - Tidak ada gradient (background, teks, tombol, maupun bayangan berwarna).

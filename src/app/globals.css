@@ -33,3 +33,25 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
 }
+
+/* Fade-in halus saat scroll (komponen FadeIn) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 500ms ease-out,
+    transform 500ms ease-out;
+}
+
+.fade-in--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

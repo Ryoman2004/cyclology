@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "outline" | "whatsapp";
+  variant?: "primary" | "outline" | "whatsapp" | "light";
   size?: "sm" | "md" | "lg";
   href?: string;
   isExternal?: boolean;
@@ -36,6 +36,7 @@ export function Button({
     outline:
       "border border-moss-600 text-moss-600 bg-transparent hover:bg-sage-50",
     whatsapp: "bg-moss-600 text-white hover:bg-moss-700",
+    light: "bg-white text-moss-600 hover:bg-sage-50",
   }[variant];
 
   const combinedClassName = `${baseStyles} ${sizeStyles} ${variantStyles} ${className}`.trim();
