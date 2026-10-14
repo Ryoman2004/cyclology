@@ -110,7 +110,7 @@ export function Navbar({ minimal = false }: NavbarProps) {
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-moss-600 px-5 py-2.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white shadow-soft transition-colors hover:bg-moss-700 active:bg-moss-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-moss-600 px-5 py-2.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white shadow-soft transition-colors hover:bg-moss-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2"
           >
             <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
             <span>Pesan via WhatsApp</span>

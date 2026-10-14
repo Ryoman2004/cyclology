@@ -32,10 +32,10 @@ export function Button({
   }[size];
 
   const variantStyles = {
-    primary: "bg-moss-600 text-white hover:bg-moss-700 active:bg-moss-900",
+    primary: "bg-moss-600 text-white hover:bg-moss-700",
     outline:
-      "border border-moss-600 text-moss-600 bg-transparent hover:bg-sage-50 active:bg-sage-200",
-    whatsapp: "bg-moss-600 text-white hover:bg-moss-700 active:bg-moss-900",
+      "border border-moss-600 text-moss-600 bg-transparent hover:bg-sage-50",
+    whatsapp: "bg-moss-600 text-white hover:bg-moss-700",
   }[variant];
 
   const combinedClassName = `${baseStyles} ${sizeStyles} ${variantStyles} ${className}`.trim();
