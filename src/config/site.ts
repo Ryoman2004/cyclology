@@ -8,10 +8,10 @@ export const siteConfig = {
   email: "syifaauliaakfina@gmail.com",
   serviceHours: "Senin - Sabtu, 09.00 - 17.00 WIB",
   social: {
-    instagram: "#",
-    tiktok: "#",
-    facebook: "#",
-    youtube: "#",
+    instagram: "https://www.instagram.com/syifa_alfina206?srtk=MXh2eDJjdnRpbjNydw==",
+    tiktok: "https://www.tiktok.com/@humanbutuhair?_r=1&_t=ZS-9AZNEFjMmwe",
+    facebook: "https://www.facebook.com/share/1jHT8VDwes/",
+    youtube: "https://youtube.com/@daurulangtv?si=omw88SsfiO5A1UBZ",
   }, // diisi akun pribadi pemilik
   impact: {
     totalKgSaved: 1250,

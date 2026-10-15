@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# dokumen besar dan file bawaan Windows
+*.pdf
+Thumbs.db
+desktop.ini
+
+# opsional: screenshot kondisi situs untuk AI (tidak perlu di repo)
+/design/current/
