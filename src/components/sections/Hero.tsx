@@ -17,7 +17,7 @@ export function Hero() {
 
             <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold leading-[1.1] tracking-tight text-moss-600">
               Barang bekas,{" "}
-              <span className="font-serif italic text-moss-700">cerita baru.</span>
+              <span className="font-serif italic text-terracotta-700">cerita baru.</span>
             </h1>
 
             <p className="max-w-xl text-base leading-relaxed text-ink-muted">

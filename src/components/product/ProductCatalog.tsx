@@ -142,7 +142,7 @@ export function ProductCatalog() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Cari produk daur ulang..."
-                className="min-h-11 w-full rounded-xl border border-line bg-white py-2.5 pl-11 pr-4 text-sm placeholder:text-ink-muted focus:border-moss-600 focus:outline-none focus:ring-2 focus:ring-sage-500"
+                className="min-h-11 w-full rounded-xl border border-line bg-white py-2.5 pl-11 pr-4 text-sm placeholder:text-ink-muted focus:border-moss-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-500"
               />
             </div>
 
@@ -159,7 +159,7 @@ export function ProductCatalog() {
                   id="urutkan-produk"
                   value={sort}
                   onChange={(e) => setSort(e.target.value as SortOption)}
-                  className="min-h-11 appearance-none rounded-xl border border-line bg-white py-2.5 pl-4 pr-10 text-sm font-medium text-ink focus:outline-none focus:ring-2 focus:ring-sage-500"
+                  className="min-h-11 appearance-none rounded-xl border border-line bg-white py-2.5 pl-4 pr-10 text-sm font-medium text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-500"
                 >
                   {sortOptions.map((option) => (
                     <option key={option.value} value={option.value}>

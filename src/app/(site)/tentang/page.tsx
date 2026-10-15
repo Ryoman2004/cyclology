@@ -211,7 +211,7 @@ export default function TentangPage() {
             title={
               <>
                 Misi &amp; Komitmen{" "}
-                <span className="font-serif italic text-moss-700">
+                <span className="font-serif italic text-terracotta-700">
                   Keberlanjutan
                 </span>
               </>
@@ -252,7 +252,7 @@ export default function TentangPage() {
             title={
               <>
                 Pendiri{" "}
-                <span className="font-serif italic text-moss-700">Kami</span>
+                <span className="font-serif italic text-terracotta-700">Kami</span>
               </>
             }
             subtitle="Dua sosok di balik perintisan misi sirkular dan kurasi kriya."
@@ -302,7 +302,7 @@ export default function TentangPage() {
             title={
               <>
                 Cara Kerja{" "}
-                <span className="font-serif italic text-moss-700">Kami</span>
+                <span className="font-serif italic text-terracotta-700">Kami</span>
               </>
             }
             subtitle="Alur transparan dari material terabaikan hingga menjadi karya fungsional siap pakai."

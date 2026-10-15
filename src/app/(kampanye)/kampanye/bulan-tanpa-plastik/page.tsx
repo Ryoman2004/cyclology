@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowRight, MessageCircle, Recycle, ShieldCheck, Truck } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { products } from "@/data/products";
@@ -99,23 +98,6 @@ export default function KampanyeBulanTanpaPlastikPage() {
 
   return (
     <main className="flex-1">
-      {/* Navbar minimal: hanya logo + satu tombol WhatsApp (SPEC 7.7) */}
-      <header className="sticky top-0 z-40 border-b border-line bg-cream">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <Link
-            href="/"
-            className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 rounded-lg"
-          >
-            <span className="text-lg font-bold tracking-tight text-moss-600">
-              {siteConfig.name}
-            </span>
-          </Link>
-          <Button variant="whatsapp" href={waLink} size="sm">
-            Pesan via WhatsApp
-          </Button>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="py-14 sm:py-20">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 text-center sm:px-6">

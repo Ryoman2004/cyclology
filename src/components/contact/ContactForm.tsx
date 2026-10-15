@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { AlertCircle, CheckCircle2, Send } from "lucide-react";
+import { AlertCircle, CheckCircle2, ChevronDown, Send } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
@@ -140,7 +140,7 @@ export function ContactForm() {
           placeholder="Nama Anda"
           aria-invalid={Boolean(errors.name)}
           aria-describedby={errors.name ? "contact-name-error" : undefined}
-          className="min-h-[48px] rounded-xl border border-line bg-white px-4 text-sm text-ink placeholder:text-ink-muted focus:border-moss-600 focus:outline-none focus:ring-2 focus:ring-sage-500"
+          className="min-h-[48px] rounded-xl border border-line bg-white px-4 text-sm text-ink placeholder:text-ink-muted focus:border-moss-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-500"
         />
         {errors.name && (
           <p
@@ -170,7 +170,7 @@ export function ContactForm() {
           placeholder="08xxxxxxxxxx"
           aria-invalid={Boolean(errors.phone)}
           aria-describedby={errors.phone ? "contact-phone-error" : undefined}
-          className="min-h-[48px] rounded-xl border border-line bg-white px-4 text-sm text-ink placeholder:text-ink-muted focus:border-moss-600 focus:outline-none focus:ring-2 focus:ring-sage-500"
+          className="min-h-[48px] rounded-xl border border-line bg-white px-4 text-sm text-ink placeholder:text-ink-muted focus:border-moss-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-500"
         />
         {errors.phone && (
           <p
@@ -191,18 +191,25 @@ export function ContactForm() {
         >
           Subjek <span className="text-terracotta-500">*</span>
         </label>
-        <select
-          id="contact-subject"
-          value={subject}
-          onChange={(e) => setSubject(e.target.value as Subject)}
-          className="min-h-[48px] rounded-xl border border-line bg-white px-4 text-sm text-ink focus:border-moss-600 focus:outline-none focus:ring-2 focus:ring-sage-500"
-        >
-          {subjectOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
+        <div className="relative">
+          <select
+            id="contact-subject"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value as Subject)}
+            className="min-h-[48px] w-full appearance-none rounded-xl border border-line bg-white px-4 pr-10 text-sm text-ink focus:border-moss-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-500"
+          >
+            {subjectOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          <ChevronDown
+            className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted"
+            strokeWidth={1.75}
+            aria-hidden="true"
+          />
+        </div>
       </div>
 
       {/* Pesan */}
@@ -223,7 +230,7 @@ export function ContactForm() {
           aria-describedby={
             errors.message ? "contact-message-error" : "contact-message-count"
           }
-          className="min-h-[120px] rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-muted focus:border-moss-600 focus:outline-none focus:ring-2 focus:ring-sage-500"
+          className="min-h-[120px] rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-muted focus:border-moss-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-500"
         />
         <div className="flex items-center justify-between gap-3">
           {errors.message ? (

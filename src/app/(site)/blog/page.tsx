@@ -48,7 +48,7 @@ export default function BlogPage() {
               </span>
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-moss-600 sm:text-4xl lg:text-5xl">
                 Jurnal Hijau{" "}
-                <span className="font-serif italic text-moss-700">
+                <span className="font-serif italic text-terracotta-700">
                   {siteConfig.name}
                 </span>
               </h1>

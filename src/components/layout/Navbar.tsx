@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 
 export interface NavbarProps {
   minimal?: boolean;
@@ -57,23 +58,7 @@ export function Navbar({ minimal = false }: NavbarProps) {
     <header className="sticky top-0 z-40 w-full border-b border-line bg-cream transition-colors">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand Logo & Wordmark */}
-        <Link
-          href="/"
-          className="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 rounded-lg p-1"
-        >
-          <div className="relative h-9 w-9 shrink-0">
-            <Image
-              src="/brand/logo.svg"
-              alt="Logo Cyclology"
-              fill
-              sizes="36px"
-              className="object-contain"
-            />
-          </div>
-          <span className="text-xl sm:text-2xl font-bold tracking-tight text-moss-600 font-sans">
-            {siteConfig.name}
-          </span>
-        </Link>
+        <BrandLogo />
 
         {/* Desktop Navigation Links */}
         {!minimal && (
@@ -116,13 +101,16 @@ export function Navbar({ minimal = false }: NavbarProps) {
             <span>Pesan via WhatsApp</span>
           </a>
 
-          {/* Admin Avatar Badge */}
-          <div
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-sage-50 text-moss-600 overflow-hidden"
-            title="Admin Cyclology Siap Membantu"
+          {/* Avatar admin: tautan WhatsApp (design/home.png menampilkan avatar di sisi ini) */}
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Hubungi admin Cyclology via WhatsApp"
+            className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-line bg-sage-50 text-moss-600 transition-colors duration-150 hover:bg-sage-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2"
           >
-            <span className="text-xs font-semibold">CY</span>
-          </div>
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+          </a>
 
           {/* Mobile Hamburger Button */}
           {!minimal && (

@@ -28,7 +28,7 @@ export function WorkshopSection() {
             </span>
             <h2 className="text-3xl font-bold leading-tight tracking-tight text-moss-600 sm:text-4xl">
               Bengkel Upcycle{" "}
-              <span className="font-serif italic text-moss-700">
+              <span className="font-serif italic text-terracotta-700">
                 {workshop.name}
               </span>
             </h2>

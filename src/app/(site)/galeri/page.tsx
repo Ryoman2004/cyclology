@@ -61,7 +61,7 @@ export default function GaleriPage() {
             title={
               <>
                 Sebelum &amp;{" "}
-                <span className="font-serif italic text-moss-700">Sesudah</span>
+                <span className="font-serif italic text-terracotta-700">Sesudah</span>
               </>
             }
             subtitle="Dari material tak terpakai menjadi barang fungsional sehari-hari dengan estetika murni."
@@ -132,7 +132,7 @@ export default function GaleriPage() {
             title={
               <>
                 Di Balik{" "}
-                <span className="font-serif italic text-moss-700">Proses</span>
+                <span className="font-serif italic text-terracotta-700">Proses</span>
               </>
             }
             subtitle="Ketelitian, kesabaran, dan dedikasi pengrajin lokal pada setiap jahitan dan poesan. Transparansi penuh dari limbah mentah hingga siap Anda gunakan."

@@ -30,8 +30,14 @@ Daftarkan sebagai CSS variable di `globals.css` dan petakan ke theme Tailwind (T
 
 ## 2. Tipografi
 - **Poppins** (400, 500, 600, 700): semua heading, isi, UI. Dimuat via `next/font/google` dengan `display: swap`.
-- **Lora italic** (400, 500): hanya untuk 1-2 kata aksen di heading besar (hero, judul seksi tertentu). Contoh: `Barang bekas, <em>cerita baru.</em>`
+- **Lora italic** (400, 500): hanya untuk aksen di heading besar. Contoh: `Barang bekas, <em>cerita baru.</em>`
 - Label kategori pada kartu produk: Poppins italic kecil.
+
+### Aturan aksen Lora italic (REVISION R3.6)
+- Maksimal **1-3 kata**.
+- Hanya di dalam **judul besar** (H1/H2, ukuran ≥ 24px). **Dilarang** di paragraf, label, atau teks kecil.
+- Warna tunggal untuk semua halaman: **`terracotta-700`**. Warna hijau `moss-700` tidak lagi dipakai untuk aksen.
+- Contoh: `Barang bekas, <em class="font-serif italic text-terracotta-700">cerita baru.</em>`
 
 | Peran | Ukuran | Berat |
 |---|---|---|

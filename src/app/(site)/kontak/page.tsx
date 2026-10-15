@@ -73,7 +73,7 @@ export default function KontakPage() {
                 title={
                   <>
                     Kirim Pesan{" "}
-                    <span className="font-serif italic text-moss-700">
+                    <span className="font-serif italic text-terracotta-700">
                       Langsung
                     </span>
                   </>

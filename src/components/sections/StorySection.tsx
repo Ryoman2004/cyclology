@@ -27,7 +27,7 @@ export function StorySection() {
             </span>
             <h2 className="text-2xl font-semibold leading-snug tracking-tight text-moss-600 sm:text-3xl lg:text-4xl">
               Setiap jahitan menyimpan{" "}
-              <span className="font-serif italic text-moss-700">harapan</span> baru.
+              <span className="font-serif italic text-terracotta-700">harapan</span> baru.
             </h2>
             <p className="text-sm leading-relaxed text-ink-muted sm:text-base">
               Kami lahir dari kepedulian terhadap limbah tekstil dan botol kaca sekali pakai
