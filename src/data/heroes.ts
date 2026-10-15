@@ -29,8 +29,8 @@ export const heroImages = {
     page: "Beranda (foto produk)",
   },
   products: {
-    src: "/images/hero/hero-produk.webp",
-    alt: "Berbagai produk daur ulang buatan tangan tersusun rapi",
+    src: "/images/hero/product/background-product-hero.webp",
+    alt: "Pengrajin menjahit denim di bengkel upcycle",
     page: "Katalog Produk",
   },
   about: {

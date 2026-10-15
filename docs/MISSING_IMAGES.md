@@ -4,7 +4,7 @@
 >
 > Sumber query foto: `scripts/photo-manifest.json`
 
-**Ringkasan:** 60 gambar dirujuk · 52 tersedia · **8 belum ada**.
+**Ringkasan:** 60 gambar dirujuk · 53 tersedia · **7 belum ada**.
 Semua gambar hilang adalah foto baru (latar hero per halaman, foto cerita, peta statis) —
 bukan gambar produk/artikel yang sudah ada.
 
@@ -14,12 +14,12 @@ bukan gambar produk/artikel yang sudah ada.
 |---|---|
 | `public/images/hero/home/background-home-hero.webp` | Latar hero Beranda, sekaligus latar FAQ dan Eco-Impact |
 | `public/images/hero/home/gambar-home-hero.webp` | Foto produk di sisi kanan hero Beranda |
+| `public/images/hero/product/background-product-hero.webp` | Latar hero Katalog Produk |
 
 ## Gambar yang belum ada
 
 | Path file | Dipakai untuk | Rekomendasi query foto | Ukuran |
 |---|---|---|---|
-| `public/images/hero/hero-produk.webp` | Latar hero Katalog Produk | `handmade recycled products flat lay` | 1600x900 |
 | `public/images/hero/hero-tentang.webp` | Latar hero Tentang | `craft workshop hands sewing` | 1600x900 |
 | `public/images/hero/hero-blog.webp` | Latar hero Blog | `notebook plants desk natural light` | 1600x900 |
 | `public/images/hero/hero-galeri.webp` | Latar hero Galeri | `upcycled fabric materials sorting` | 1600x900 |

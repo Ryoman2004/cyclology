@@ -2,7 +2,7 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ChevronDown, LayoutGrid, Search, SearchX, ShoppingBag } from "lucide-react";
+import { ArrowDown, ChevronDown, LayoutGrid, Recycle, Search, SearchX, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { CategoryStrip, type CategoryStripSlug } from "@/components/product/CategoryStrip";
 import { ProductGrid } from "@/components/product/ProductGrid";
@@ -101,29 +101,49 @@ export function ProductCatalog() {
 
   return (
     <>
-      {/* Hero katalog */}
+{/* Hero katalog */}
       <PageHero
-        eyebrow="Kurasi Ramah Lingkungan"
-        title="Katalog Semua Produk"
-        description="Temukan kurasi karya upcycle unik buatan tangan pengrajin lokal untuk keseharian sadar lingkunganmu."
+        tone="dark"
+        align="center"
+        eyebrow="Katalog Kriya &amp; Upcycle Lokal"
+        title={
+          <>
+            Katalog Koleksi{" "}
+            <span className="font-serif italic text-sage-200">Semua Produk</span>
+          </>
+        }
+        description="Temukan kurasi karya buatan tangan pengrajin Nusantara dari bahan dasar limbah pilihan, didesain fungsional untuk keseharian sadar lingkungan."
         image={heroImages.products.src}
-        breadcrumb={[{ label: "Produk" }]}
-        aside={
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-moss-600">
-              <ShoppingBag className="h-3.5 w-3.5" aria-hidden="true" />
-              {products.length} produk
+        breadcrumb={[{ label: "Katalog Produk" }]}
+        actions={
+          <Button
+            variant="light"
+            href="#katalog"
+            icon={<ArrowDown className="h-4 w-4" />}
+          >
+            Eksplor Produk
+          </Button>
+        }
+        chips={
+          <>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-moss-900/40 px-3 py-1.5">
+              <Recycle className="h-3.5 w-3.5" aria-hidden="true" />
+              100% Karya Upcycle
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-moss-600">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-moss-900/40 px-3 py-1.5">
+              <Users className="h-3.5 w-3.5" aria-hidden="true" />
+              Pengrajin Lokal
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-moss-900/40 px-3 py-1.5">
               <LayoutGrid className="h-3.5 w-3.5" aria-hidden="true" />
-              {categories.length} kategori
+              {products.length} produk &middot; {categories.length} kategori
             </span>
-          </div>
+          </>
         }
       />
 
       {/* Strip kategori + toolbar + grid */}
-      <section className="bg-sage-50 py-10 sm:py-14">
+      <section id="katalog" className="scroll-mt-20 bg-sage-50 py-10 sm:py-14">
         <div className="mx-auto flex max-w-300 flex-col gap-8 px-4 sm:px-6 lg:px-8">
           <CategoryStrip showAll activeSlug={activeSlug} />
 

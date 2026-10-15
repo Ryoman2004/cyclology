@@ -31,10 +31,11 @@
       "manual": true
     },
     {
-      "file": "public/images/hero/hero-produk.webp",
-      "query": "handmade recycled products flat lay",
+      "file": "public/images/hero/product/background-product-hero.webp",
+      "query": "craft workshop hands sewing denim upcycle",
       "size": "hero",
-      "for": "Latar hero Katalog Produk"
+      "for": "Latar hero Katalog Produk (sudah ada dari pemilik)",
+      "manual": true
     },
     {
       "file": "public/images/hero/hero-tentang.webp",

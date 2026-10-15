@@ -26,6 +26,8 @@ export interface PageHeroProps {
    * "dark"   = hero gelap: teks putih di atas foto workshop + overlay moss-900.
    */
   tone?: "light" | "dark";
+  /** Tata letak konten. "center" dipakai hero Katalog Produk. */
+  align?: "left" | "center";
 }
 
 /**
@@ -43,8 +45,10 @@ export function PageHero({
   chips,
   intensity = "normal",
   tone = "light",
+  align = "left",
 }: PageHeroProps) {
   const isDark = tone === "dark";
+  const isCenter = align === "center" && !aside;
   const photoOpacity = isDark
     ? "opacity-100"
     : intensity === "soft"
@@ -72,17 +76,27 @@ export function PageHero({
 
       <div className="relative mx-auto max-w-300 px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
         {breadcrumb && (
-          <Breadcrumb items={breadcrumb} className="mb-6" />
+          <div
+            className={isCenter ? "mb-6 flex justify-center text-center" : "mb-6"}
+          >
+            <Breadcrumb items={breadcrumb} />
+          </div>
         )}
 
         <div
           className={
             aside
               ? "grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14"
-              : "flex max-w-3xl flex-col items-start gap-5"
+              : isCenter
+                ? "mx-auto flex max-w-3xl flex-col items-center gap-5 text-center"
+                : "flex max-w-3xl flex-col items-start gap-5"
           }
         >
-          <div className="flex flex-col items-start gap-5">
+          <div
+            className={`flex flex-col gap-5 ${
+              isCenter ? "items-center" : "items-start"
+            }`}
+          >
             {eyebrow &&
               (isDark ? (
                 <span className="rounded-full bg-sage-200 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-moss-700">
@@ -113,14 +127,20 @@ export function PageHero({
             )}
 
             {actions && (
-              <div className="flex flex-wrap items-center gap-3 pt-1">{actions}</div>
+              <div
+                className={`flex flex-wrap items-center gap-3 pt-1 ${
+                  isCenter ? "justify-center" : ""
+                }`}
+              >
+                {actions}
+              </div>
             )}
 
             {chips && (
               <div
                 className={`flex flex-wrap items-center gap-2 pt-1 text-xs font-medium ${
                   isDark ? "text-sage-200" : "text-ink-muted"
-                }`}
+                } ${isCenter ? "justify-center" : ""}`}
               >
                 {chips}
               </div>
