@@ -8,7 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { PageHero } from "@/components/sections/PageHero";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -37,29 +37,32 @@ export default function KontakPage() {
 
   return (
     <main className="flex-1">
-      {/* Header */}
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: "Kontak" }]} className="mb-6" />
-          <div className="flex max-w-3xl flex-col gap-5">
-            <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-700">
-              Hubungi Kami
+      {/* Hero */}
+      <PageHero
+        eyebrow="Hubungi Kurator Kami"
+        title={
+          <>
+            Mari Terhubung,{" "}
+            <span className="font-serif italic text-terracotta-700">
+              Ciptakan Kebaikan.
             </span>
-            <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-moss-600 sm:text-5xl">
-              Mari Terhubung,{" "}
-              <span className="font-serif italic text-terracotta-700">
-                Ciptakan Kebaikan.
-              </span>
-            </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
-              Punya pertanyaan seputar kurasi karya upcycle, pesanan suvenir
-              berkelanjutan, atau sekadar ingin menyapa pengrajin lokal kami?
-              Kami senang mendengar dari Anda.
-            </p>
-          </div>
-        </div>
-      </section>
-
+          </>
+        }
+        description="Punya pertanyaan seputar kurasi karya upcycle, pesanan suvenir berkelanjutan, atau sekadar ingin menyapa pengrajin lokal kami? Kami senang mendengar dari Anda."
+        image="/images/gallery/after-vas.webp"
+        breadcrumb={[{ label: "Kontak" }]}
+        chips={
+          <>
+            <Button variant="whatsapp" href={waLink} size="sm">
+              Tanya via WhatsApp
+            </Button>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-medium text-ink-muted">
+              <Clock className="h-3.5 w-3.5 text-moss-600" aria-hidden="true" />
+              {siteConfig.serviceHours}
+            </span>
+          </>
+        }
+      />
       {/* Form + Kartu Info */}
       <section className="border-t border-line bg-sage-50 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

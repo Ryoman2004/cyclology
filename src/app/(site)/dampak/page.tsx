@@ -7,6 +7,7 @@ import { categories } from "@/data/categories";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/sections/PageHero";
 import { formatKg } from "@/lib/format";
 
 export const metadata: Metadata = {
@@ -63,23 +64,23 @@ export default function DampakPage() {
   return (
     <main className="flex-1">
       {/* Hero */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <SectionHeading
-            as="h1"
-            label="Transparansi &amp; Akuntabilitas"
-            title={
-              <>
-                Angka Nyata Dibalik{" "}
-                <span className="font-serif italic text-terracotta-700">
-                  Setiap Karya
-                </span>
-              </>
-            }
-            subtitle="Kami percaya transparansi adalah bagian dari tanggung jawab. Berikut catatan dampak sosial dan lingkungan dari perjalanan Cyclology."
-          />
+      <PageHero
+        eyebrow="Transparansi &amp; Akuntabilitas"
+        title={
+          <>
+            Angka Nyata Dibalik{" "}
+            <span className="font-serif italic text-terracotta-700">
+              Setiap Karya
+            </span>
+          </>
+        }
+        description="Kami percaya transparansi adalah bagian dari tanggung jawab. Berikut catatan dampak sosial dan lingkungan dari perjalanan Cyclology."
+        image="/images/gallery/after-hiasan-dinding.webp"
+        breadcrumb={[{ label: "Dampak" }]}
+      />
 
-          {/* Angka besar total kg */}
+      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+        <div className="text-center">          {/* Angka besar total kg */}
           <FadeIn>
             <div className="mt-10 flex flex-col items-center gap-2 rounded-2xl border border-line bg-sage-50 p-8 sm:p-12">
               <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
@@ -100,7 +101,7 @@ export default function DampakPage() {
             </div>
           </FadeIn>
         </div>
-      </section>
+      </div>
 
       {/* 3 kartu statistik */}
       <section className="border-t border-line bg-sage-50 py-16 sm:py-24">
@@ -236,7 +237,7 @@ export default function DampakPage() {
                 Jelajahi Katalog
               </Button>
             </div>
-          </FadeIn>
+</FadeIn>
         </div>
       </section>
     </main>

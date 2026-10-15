@@ -4,10 +4,9 @@ import { MessageCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/data/faq";
 import { Accordion } from "@/components/ui/Accordion";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { PageHero } from "@/components/sections/PageHero";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
@@ -31,29 +30,19 @@ export default function FaqPage() {
 
   return (
     <main className="flex-1">
-      {/* Header */}
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center gap-4 text-center">
-            <Breadcrumb items={[{ label: "Tanya Jawab" }]} />
-            <SectionHeading
-              as="h1"
-              align="center"
-              label="Tanya Jawab"
-              title={
-                <>
-                  Pertanyaan{" "}
-                  <span className="font-serif italic text-terracotta-700">
-                    Umum.
-                  </span>
-                </>
-              }
-              subtitle="Temukan jawaban seputar pemesanan, produk daur ulang, dan pengiriman dari tim Cyclology."
-            />
-          </div>
-        </div>
-      </section>
-
+      {/* Hero */}
+      <PageHero
+        eyebrow="Tanya Jawab"
+        title={
+          <>
+            Pertanyaan{" "}
+            <span className="font-serif italic text-terracotta-700">Umum.</span>
+          </>
+        }
+        description="Temukan jawaban seputar pemesanan, produk daur ulang, dan pengiriman dari tim Cyclology."
+        image="/images/gallery/proses-5-merakit.webp"
+        breadcrumb={[{ label: "Tanya Jawab" }]}
+      />
       {/* Accordion FAQ */}
       <section className="border-t border-line bg-sage-50 py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

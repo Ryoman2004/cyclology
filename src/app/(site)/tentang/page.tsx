@@ -2,8 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { ArrowRight, Leaf, Recycle, ShoppingBag, Users } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { Badge } from "@/components/ui/Badge";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { PageHero } from "@/components/sections/PageHero";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SafeImage } from "@/components/ui/SafeImage";
@@ -78,47 +77,39 @@ export default function TentangPage() {
   return (
     <main className="flex-1">
       {/* Hero */}
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: "Tentang Kami" }]} className="mb-6" />
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-            <div className="flex max-w-3xl flex-col gap-5">
-              <Badge variant="sage">Tentang {siteConfig.name}</Badge>
-              <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-moss-600 sm:text-5xl lg:text-6xl">
-                Mengubah Limbah Jadi Berkah, Menghadirkan{" "}
-                <span className="font-serif italic text-terracotta-700">
-                  Karya Bernilai Guna.
-                </span>
-              </h1>
-              <p className="max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
-                {siteConfig.name} berkomitmen menyelamatkan material sisa pakai
-                dan mentransformasi limbah tekstil menjadi perlengkapan artisan
-                bernilai tahan lama, sambil mendukung pengrajin perempuan
-                mandiri di {siteConfig.location.city} dan sekitarnya.
+      <PageHero
+        eyebrow={`Tentang ${siteConfig.name}`}
+        title={
+          <>
+            Mengubah Limbah Jadi Berkah, Menghadirkan{" "}
+            <span className="font-serif italic text-terracotta-700">
+              Karya Bernilai Guna.
+            </span>
+          </>
+        }
+        description={`${siteConfig.name} berkomitmen menyelamatkan material sisa pakai dan mentransformasi limbah tekstil menjadi perlengkapan artisan bernilai tahan lama, sambil mendukung pengrajin perempuan mandiri di ${siteConfig.location.city} dan sekitarnya.`}
+        image="/images/gallery/proses-6-finishing.webp"
+        breadcrumb={[{ label: "Tentang Kami" }]}
+        aside={
+          <div className="flex w-full max-w-sm items-start gap-3 rounded-2xl border border-line bg-white p-5 shadow-soft">
+            <span
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sage-50 text-moss-600"
+              aria-hidden="true"
+            >
+              <Leaf className="h-4 w-4" strokeWidth={1.75} />
+            </span>
+            <div className="flex flex-col gap-1">
+              <span className="text-xs font-semibold uppercase tracking-wider text-moss-600">
+                Dikerjakan Tangan
+              </span>
+              <p className="text-sm leading-relaxed text-ink-muted">
+                Setiap karya memakai bahan dari barang bekas dan dikerjakan
+                bertahap di studio kami.
               </p>
             </div>
-
-            {/* Kartu kecil "Dikerjakan Tangan" */}
-            <div className="flex w-full max-w-sm shrink-0 items-start gap-3 rounded-2xl border border-line bg-white p-5 shadow-soft lg:mt-4">
-              <span
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sage-50 text-moss-600"
-                aria-hidden="true"
-              >
-                <Leaf className="h-4 w-4" strokeWidth={1.75} />
-              </span>
-              <div className="flex flex-col gap-1">
-                <span className="text-xs font-semibold uppercase tracking-wider text-moss-600">
-                  Dikerjakan Tangan
-                </span>
-                <p className="text-sm leading-relaxed text-ink-muted">
-                  Setiap karya memakai bahan dari barang bekas dan dikerjakan
-                  bertahap di studio kami.
-                </p>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Strip tiga penekanan */}
       <section className="py-6">

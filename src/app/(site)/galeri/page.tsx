@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { beforeAfterGallery, processGallery } from "@/data/gallery";
 import { Badge } from "@/components/ui/Badge";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { PageHero } from "@/components/sections/PageHero";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -28,29 +28,33 @@ export const metadata: Metadata = {
 export default function GaleriPage() {
   return (
     <main className="flex-1">
-      {/* Header */}
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: "Galeri" }]} className="mb-6" />
-          <div className="flex max-w-3xl flex-col gap-5">
-            <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-700">
-              Dokumentasi Karya &amp; Proses
+      {/* Hero */}
+      <PageHero
+        eyebrow="Dokumentasi Karya &amp; Proses"
+        title={
+          <>
+            Transformasi Limbah,{" "}
+            <span className="font-serif italic text-terracotta-700">
+              Cerita Nyata.
             </span>
-            <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-moss-600 sm:text-5xl">
-              Transformasi Limbah,{" "}
-              <span className="font-serif italic text-terracotta-700">
-                Cerita Nyata.
-              </span>
-            </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
-              Saksikan bagaimana barang bekas yang terabaikan bertransformasi
-              menjadi produk fungsional bernilai tinggi melalui sentuhan tangan
-              terampil pengrajin lokal Nusantara.
-            </p>
-          </div>
-        </div>
-      </section>
-
+          </>
+        }
+        description="Saksikan bagaimana barang bekas yang terabaikan bertransformasi menjadi produk fungsional bernilai tinggi melalui sentuhan tangan terampil pengrajin lokal Nusantara."
+        image="/images/gallery/before-jeans.webp"
+        breadcrumb={[{ label: "Galeri" }]}
+        chips={
+          <>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-moss-600">
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+              {beforeAfterGallery.length} transformasi
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-moss-600">
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+              {processGallery.length} tahap proses
+            </span>
+          </>
+        }
+      />
       {/* Sebelum & Sesudah */}
       <section className="border-t border-line bg-sage-50 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

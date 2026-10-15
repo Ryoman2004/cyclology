@@ -4,6 +4,7 @@ import { ArrowRight, MessageCircle, Recycle, ShieldCheck, Truck } from "lucide-r
 import { siteConfig } from "@/config/site";
 import { products } from "@/data/products";
 import { Button } from "@/components/ui/Button";
+import { PageHero } from "@/components/sections/PageHero";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { formatRupiah } from "@/lib/format";
@@ -99,32 +100,61 @@ export default function KampanyeBulanTanpaPlastikPage() {
   return (
     <main className="flex-1">
       {/* Hero */}
-      <section className="py-14 sm:py-20">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 text-center sm:px-6">
-          <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-700">
-            Kampanye Khusus &middot; Bulan Tanpa Plastik
-          </span>
-          <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-moss-600 sm:text-5xl">
+      <PageHero
+        eyebrow="Kampanye Khusus &middot; Bulan Tanpa Plastik"
+        title={
+          <>
             Mulai Langkah Kecil, Hidup Lebih Tenang{" "}
             <span className="font-serif italic text-terracotta-700">
               Tanpa Sampah Plastik.
             </span>
-          </h1>
-          <p className="max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
-            Ganti kebiasaan kantong sekali pakai dengan karya upcycle tahan
-            lama buatan tangan perajin lokal.
-          </p>
-          <div className="flex flex-col items-center gap-3 pt-2 sm:flex-row sm:gap-4">
-            <Button variant="whatsapp" href={waLink} size="lg" icon={<ArrowRight className="h-4 w-4" />}>
+          </>
+        }
+        description="Ganti kebiasaan kantong sekali pakai dengan karya upcycle tahan lama buatan tangan perajin lokal."
+        image="/images/products/tote-bag-denim-bekas.webp"
+        actions={
+          <>
+            <Button
+              variant="whatsapp"
+              href={waLink}
+              size="lg"
+              icon={<ArrowRight className="h-4 w-4" />}
+            >
               Ambil Paket Hemat
             </Button>
             <Button variant="outline" href="/kontak" size="lg">
               Tanya Tim Kurator
             </Button>
+          </>
+        }
+        aside={
+          <div className="grid grid-cols-3 gap-3">
+            {packageItems.map((product) => (
+              <div
+                key={product.slug}
+                className="overflow-hidden rounded-xl border border-line bg-white shadow-soft"
+              >
+                <div className="relative aspect-square w-full bg-sage-50">
+                  <SafeImage
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(min-width: 1024px) 16vw, 30vw"
+                    className="object-cover"
+                    fallbackLabel={product.name}
+                  />
+                </div>
+                <p className="px-2 py-2 text-[10px] font-medium leading-tight text-ink-muted">
+                  {product.name}
+                </p>
+              </div>
+            ))}
+            <p className="col-span-3 text-center text-sm font-semibold text-moss-600">
+              Harga paket {formatRupiah(packagePrice)}
+            </p>
           </div>
-        </div>
-      </section>
-
+        }
+      />
       {/* 3 kartu manfaat */}
       <section className="border-t border-line bg-sage-50 py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">

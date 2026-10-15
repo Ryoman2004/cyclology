@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { PageHero } from "@/components/sections/PageHero";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { FeaturedArticle } from "@/components/blog/FeaturedArticle";
 import { BlogFilter } from "@/components/blog/BlogFilter";
@@ -33,50 +33,37 @@ export default function BlogPage() {
 
   return (
     <main className="flex-1">
-      {/* Header halaman Blog */}
-      <section className="border-b border-line py-8 sm:py-12">
-        <div className="mx-auto max-w-300 px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: "Blog" }]} className="mb-6" />
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="flex max-w-2xl flex-col gap-4">
-              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-terracotta-700">
-                <span
-                  className="h-1.5 w-1.5 rounded-full bg-terracotta-500"
-                  aria-hidden="true"
-                />
-                Koleksi Tulisan &amp; Wawasan
+      {/* Hero halaman Blog */}
+      <PageHero
+        eyebrow="Koleksi Tulisan &amp; Wawasan"
+        title={
+          <>
+            Jurnal Hijau{" "}
+            <span className="font-serif italic text-terracotta-700">
+              {siteConfig.name}
+            </span>
+          </>
+        }
+        description="Inspirasi, panduan daur ulang praktis, dan kisah bermakna di balik gaya hidup minim sampah bersama pengrajin lokal Nusantara."
+        image="/images/gallery/proses-7-qc.webp"
+        breadcrumb={[{ label: "Blog" }]}
+        aside={
+          <div className="flex w-full max-w-sm shrink-0 divide-x divide-line rounded-2xl border border-line bg-white px-6 py-4 shadow-soft">
+            <div className="flex flex-1 flex-col items-center gap-1 px-5">
+              <span className="text-2xl font-bold text-moss-600">
+                {articleCount}
               </span>
-              <h1 className="text-3xl font-bold leading-tight tracking-tight text-moss-600 sm:text-4xl lg:text-5xl">
-                Jurnal Hijau{" "}
-                <span className="font-serif italic text-terracotta-700">
-                  {siteConfig.name}
-                </span>
-              </h1>
-              <p className="text-sm leading-relaxed text-ink-muted sm:text-base">
-                Inspirasi, panduan daur ulang praktis, dan kisah bermakna di
-                balik gaya hidup minim sampah bersama pengrajin lokal
-                Nusantara.
-              </p>
+              <span className="text-xs text-ink-muted">Artikel Terbit</span>
             </div>
-
-            {/* Dua angka faktual dari data, bukan klaim "34+"/"100%" */}
-            <div className="flex shrink-0 divide-x divide-line rounded-2xl border border-line bg-white px-6 py-4 shadow-soft">
-              <div className="flex flex-col items-center gap-1 px-5">
-                <span className="text-2xl font-bold text-moss-600">
-                  {articleCount}
-                </span>
-                <span className="text-xs text-ink-muted">Artikel Terbit</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 px-5">
-                <span className="text-2xl font-bold text-moss-600">
-                  {categoryCount}
-                </span>
-                <span className="text-xs text-ink-muted">Kategori Topik</span>
-              </div>
+            <div className="flex flex-1 flex-col items-center gap-1 px-5">
+              <span className="text-2xl font-bold text-moss-600">
+                {categoryCount}
+              </span>
+              <span className="text-xs text-ink-muted">Kategori Topik</span>
             </div>
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Artikel unggulan */}
       {featured && (
