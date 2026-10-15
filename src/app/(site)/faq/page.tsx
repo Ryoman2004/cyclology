@@ -32,7 +32,8 @@ export default function FaqPage() {
   return (
     <main className="flex-1">
       {/* Hero */}
-      <PageHero
+<PageHero
+        align="center"
         eyebrow="Tanya Jawab"
         title={
           <>

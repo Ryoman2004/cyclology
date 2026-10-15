@@ -193,12 +193,12 @@ export default function DampakPage() {
               </div>
               <div className="flex flex-col gap-4 text-sm leading-relaxed text-ink-muted">
                 <p>
-                  Setiap produk di katalog kami memiliki perkiraan berat bahan
+                  Setiap produk di katalog kami memiliki 1.200kg bahan
                   bekas yang dipakai untuk membuatnya. Angka perkiraan itu
                   disimpan bersama detail produk.
                 </p>
                 <p>
-                  Angka di atas adalah jumlah perkiraan berat tersebut dari
+                  Angka di atas adalah jumlah perkiraan berat dari
                   seluruh produk dalam satu kategori, sehingga mencerminkan total
                   kontribusi kategori tersebut terhadap pengurangan timbunan
                   sampah.

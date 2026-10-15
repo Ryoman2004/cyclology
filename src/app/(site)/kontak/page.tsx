@@ -237,8 +237,8 @@ export default function KontakPage() {
                 </span>
                 <p className="text-sm leading-relaxed text-ink-muted">
                   Kunjungan ke bengkel dipersilakan berdasarkan kesepakatan
-                  terlebih dahulu melalui WhatsApp. Alamat dan peta di atas
-                  merupakan data sementara yang akan diperbarui oleh pemilik.
+                  terlebih dahulu melalui WhatsApp. Kami akan menyambut Anda dengan senang 
+                  hati, Salam Lestari!.
                 </p>
               </div>
             </div>
