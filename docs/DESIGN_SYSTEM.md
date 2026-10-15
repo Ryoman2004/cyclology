@@ -98,9 +98,28 @@ Latar `moss-900`, teks `cream`. Kolom: logo + deskripsi singkat, tautan cepat, k
 - **Accordion (FAQ):** kartu putih, border `line`, ikon plus/minus, animasi tinggi halus.
 - **Input form:** tinggi 48px, radius 12px, border `line`, fokus border `moss-600` + ring `sage-500`, label di atas input, pesan error `terracotta-700` dengan ikon.
 - **BlogCard:** gambar 16:10 radius 12px, chip kategori, judul 600, 2 baris ringkasan, tanggal dan waktu baca.
-- **WhatsAppFloat:** tombol bulat 56px `moss-600` di pojok kanan bawah, ikon putih, `aria-label` jelas.
+- **WhatsAppFloat:** tombol **bulat 56px (`h-14 w-14`)** `moss-600` di pojok kanan bawah, **ikon saja tanpa teks**, `aria-label` jelas. Dilarang bentuk pil bertulis "WhatsApp".
 - **ImpactBand:** latar `sage-50`, angka besar `moss-600` (Poppins 700), label `ink-muted`. Memuat tautan teks "Lihat dampak kami" ke `/dampak`.
 - **SafeImage:** pembungkus `next/image` dengan fallback blok `sage-50` + ikon daun jika gambar gagal dimuat.
+
+### 4.7 PageHero (hero halaman)
+Semua halaman memakai satu komponen `src/components/sections/PageHero.tsx` agar konsisten.
+
+Struktur wajib (urutan tidak boleh diubah):
+```html
+<section class="relative isolate overflow-hidden bg-cream">
+  <SafeImage fill sizes="100vw" alt="" aria-hidden class="object-cover opacity-15 sm:opacity-20" />  <!-- foto lokal -->
+  <div class="absolute inset-0 bg-cream/70" />                                                    <!-- overlay warna SOLID -->
+  <div class="relative ..."> ...konten... </div>
+</section>
+```
+Aturan:
+- **Dilarang gradient.** Overlay selalu warna token solid dengan opacity (`bg-cream/70`).
+- Opasitas foto 15-20% (mobile 15%, desktop 20%). Persis satu gambar `priority` per halaman.
+- Foto bersifat dekoratif: `alt=""` + `aria-hidden="true"`.
+- Tinggi `py-14 sm:py-16 lg:py-24`.
+- Isi: `eyebrow` (label `terracotta-700` uppercase), `title` (H1 700, aksen Lora sesuai aturan di atas), `description`, `actions` (tombol), `chips` (chip kecil), `aside` (kartu/kolase/statistik di kanan), `breadcrumb`.
+- Sumber foto latar: `src/data/heroes.ts` dan `scripts/photo-manifest.json`. Selalu file lokal di `public/images/hero/`.
 
 ## 5. Gambar dan fotografi
 - Gaya: cahaya alami, latar netral hangat (kayu terang, linen, krem), produk terlihat jelas, tanpa filter berlebihan.

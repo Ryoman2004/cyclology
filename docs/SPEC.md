@@ -47,6 +47,20 @@ Penugasan: **Business Website**, minimal 7-10 halaman/fitur.
 
 Navbar: Beranda, Produk, Tentang, Blog, Galeri, FAQ, Kontak + tombol "Pesan via WhatsApp". Halaman `/dampak` dijangkau dari band statistik di Beranda dan dari footer; halaman kampanye dari banner di Beranda dan dari footer. **Tidak ada halaman `/dashboard`, dan tidak boleh ada tautan ke sana.**
 
+### 3.1 Route group
+URL tidak boleh berubah, tetapi tata letak memakai route group:
+
+| Folder | Isi | Layout |
+|---|---|---|
+| `src/app/(site)/` | Beranda, `/tentang`, `/produk`, `/blog`, `/galeri`, `/faq`, `/kontak`, `/dampak` | `Navbar` penuh + `Footer` + `WhatsAppFloat` |
+| `src/app/(kampanye)/kampanye/` | Landing page kampanye | hanya `NavbarMinimal` (logo + tombol WhatsApp) |
+
+`src/app/layout.tsx` hanya memuat `<html>`, `<body>`, dan font. Nama route group `(site)` dan `(kampanye)` tidak muncul di URL.
+
+### 3.2 Komponen hero
+Seluruh halaman memakai `src/components/sections/PageHero.tsx` (server component) dengan props `eyebrow`, `title`, `description`, `image`, `breadcrumb?`, `actions?`, `aside?`, `chips?`, `intensity?`.
+Struktur: foto latar lokal (`SafeImage`, `alt=""`, `aria-hidden`, `sizes="100vw"`) + **overlay warna solid `bg-cream/70`** (tanpa gradient) + konten di atasnya. Hanya satu gambar ber-`priority` per halaman. Daftar foto latar ada di `src/data/heroes.ts` dan `scripts/photo-manifest.json`.
+
 ## 4. Konfigurasi (`src/config/site.ts`)
 ```ts
 export const siteConfig = {
@@ -58,22 +72,35 @@ export const siteConfig = {
   email: "halo@cyclology.example",
   serviceHours: "Senin - Sabtu, 09.00 - 17.00 WIB",
   social: { instagram: "#", tiktok: "#", facebook: "#", youtube: "#" }, // diisi akun pribadi pemilik
-  impact: { totalKgSaved: 1250, productsSold: 480, artisans: 12 },     // placeholder, ganti dengan data asli sebelum dipublikasikan
+  impact: { totalKgSaved: 1250, productsSold: 480, artisans: 24 },     // placeholder, ganti dengan data asli sebelum dipublikasikan
   founders: [
-    { name: "Syifa Aulia Akfina", role: "Co-Founder", photo: "/images/brand/founder-syifa.webp", bio: "Kalimat singkat placeholder tentang peran di Cyclology." },
-    { name: "Fullan Bin Fullin",   role: "Co-Founder", photo: "/images/brand/founder-fullan.webp", bio: "Kalimat singkat placeholder tentang peran di Cyclology." },
-  ],
-  // Bagian "Bengkel" di Galeri (peta + alamat). SEMUA DUMMY, diganti pemilik nanti.
+    { name: "Syifa Aulia Akfina",    role: "Co-Founder", photo: "/images/brand/founder-syifa.webp",  bio: "" },
+    { name: "Syaza Ghaisani Nadinda", role: "Co-Founder", photo: "/images/brand/founder-syaza.webp", bio: "" },
+    { name: "Rulyan Akasdo",          role: "Co-Founder", photo: "/images/brand/founder-rulyan.webp", bio: "" },
+  ], // bio dikosongkan pemilik; string kosong berarti baris bio disembunyikan di UI
+  // Bagian "Bengkel" di Galeri dan Kontak. Alamat berstatus dummy, diganti pemilik nanti.
   workshop: {
-    name: "Bengkel Upcycle Cyclology",
+    name: "Cyclology",
     address: "Meruyung, Limo, Depok, Jawa Barat",   // dummy
-    hours: "Senin - Sabtu, 09.00 - 17.00 WIB",     // dummy
-    mapEmbedUrl: "",                               // isi dengan URL embed Google Maps asli
+    hours: "Senin - Sabtu, 09.00 - 17.00 WIB",      // dummy
+    mapsUrl: "https://maps.app.goo.gl/XXXXXXX",     // link Google Maps biasa untuk tombol "Buka di Google Maps"
+    mapEmbedUrl: "",                               // URL embed resmi; kosong = pakai OpenStreetMap
+    lat: -6.3747444,                                // koordinat bengkel (opsional, untuk OpenStreetMap)
+    lng: 106.77036,
   },
   // Lokasi kota/provinsi. Semua teks halaman memakai nilai ini.
   location: { city: "Depok", province: "Jawa Barat" },
 };
 ```
+
+### 4.1 Peta bengkel (urutan prioritas)
+`WorkshopSection` membaca `siteConfig.workshop` dan menampilkan peta sesuai urutan:
+1. `mapEmbedUrl` **valid** (diawali `https://www.google.com/maps/embed` atau `https://www.openstreetmap.org/export/embed.html`) → `<iframe>` embed.
+2. `lat` + `lng` terisi → embed OpenStreetMap (`bbox` ±500 m, `marker`) tanpa API key.
+3. Keduanya kosong → gambar statis `public/images/brand/peta-bengkel.webp` lewat `SafeImage`.
+
+Tombol **"Buka di Google Maps"** memakai `mapsUrl` dan selalu tampil di bawah peta.
+Alamat bengkel juga ditampilkan tepat di bawah peta.
 
 ## 5. Model data
 ```ts
@@ -209,9 +236,9 @@ Apakah masih tersedia?
 Daftar: artikel unggulan besar + grid 3 kolom, filter kategori. Detail: judul, meta (tanggal, waktu baca, kategori), gambar, isi, tombol bagikan ke WhatsApp, 3 artikel terkait, CTA ke katalog.
 
 ### 7.5 Tentang, Galeri, FAQ
-Sesuai bagian 6 dan prompt di `stitch/STITCH_PROMPTS.md`. Tentang berisi: hero, cerita, 3 misi (Kurangi limbah, Dukung pengrajin lokal, Edukasi gaya hidup hijau), **Pendiri Kami** (2 kartu sejajar, data dari `siteConfig.founders`: foto, nama, peran "Co-Founder", satu kalimat singkat), 3 langkah cara kerja (Kumpulkan, Olah, Hadirkan), CTA. Foto pendiri memakai `SafeImage` sehingga placeholder tampil sampai foto asli dipasang.
+Tentang berisi: hero, cerita, 3 misi (Kurangi limbah, Dukung pengrajin lokal, Edukasi gaya hidup hijau), **Pendiri Kami** (**3 kartu**, data dari `siteConfig.founders`: foto potret, nama, peran "Co-Founder", bio singkat bila diisi), 3 langkah cara kerja (Kumpulkan, Olah, Hadirkan), CTA. Tata letak 3 kartu: 1 kolom di HP, 3 kolom di ≥768px, tinggi sama. Bio disembunyikan bila `bio` kosong. Foto pendiri memakai `SafeImage` sehingga placeholder tampil sampai foto asli dipasang.
 
-**Bagian Bengkel (dummy):** Galeri memuat bagian "Bengkel Upcycle Cyclology" dengan nama, alamat, jam layanan, dan peta sesuai desain Stitch. Semua datanya diambil dari `siteConfig.workshop` dan berstatus **dummy** yang akan diganti pemilik. Komponen peta: jika `workshop.mapEmbedUrl` terisi, tampilkan `<iframe>` (`loading="lazy"`, `title`, `referrerPolicy="no-referrer-when-downgrade"`); jika kosong, tampilkan gambar peta placeholder (via `SafeImage`) mengikuti desain.
+**Bagian Bengkel:** Galeri **dan** Kontak memakai komponen `WorkshopSection` yang sama, sehingga data dan tampilan konsisten. Namanya diambil dari `siteConfig.workshop` (alamat berstatus **dummy**). Peta mengikuti urutan prioritas di bagian 4.1, dan alamat + tombol "Buka di Google Maps" tampil tepat di bawah peta.
 
 ### 7.6 Kontak
 - Form: Nama (wajib), Nomor WhatsApp (opsional, validasi angka), Subjek (Tanya produk, Pesan custom, Kerja sama, Lainnya), Pesan (wajib, maks 500 karakter).
