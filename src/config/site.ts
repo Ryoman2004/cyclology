@@ -43,7 +43,13 @@ export const siteConfig = {
     name: "Cyclology",
     address: "Meruyung, Limo, Depok, Jawa Barat", // dummy
     hours: "Senin - Sabtu, 09.00 - 17.00 WIB", // dummy
-    mapEmbedUrl: "https://maps.app.goo.gl/C2JG3fZ35JPS3vXV6", // isi dengan URL embed Google Maps asli
+    // Link Google Maps biasa; dipakai tombol "Buka di Google Maps".
+    mapsUrl: "https://maps.app.goo.gl/C2JG3fZ35JPS3vXV6",
+    // URL embed resmi (Bagikan > Sematkan peta > Salin HTML). Kosong = pakai OpenStreetMap.
+    mapEmbedUrl: "",
+    // Koordinat bengkel, diambil dari link Google Maps di atas.
+    lat: -6.3747444,
+    lng: 106.77036,
   },
   // Lokasi kota/provinsi. Semua teks halaman memakai nilai ini (REVISION aturan R0.2).
   location: {

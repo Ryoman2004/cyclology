@@ -1,21 +1,51 @@
 import React from "react";
-import { MapPin, Clock } from "lucide-react";
+import { ExternalLink, MapPin, Clock } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { SafeImage } from "@/components/ui/SafeImage";
 
+/** Prefix URL embed yang diizinkan (R6). */
+const EMBED_PREFIXES = [
+  "https://www.google.com/maps/embed",
+  "https://www.openstreetmap.org/export/embed.html",
+];
+
+/** Half-website bbox OpenStreetMap, sekitar ±500 m. */
+const BBOX_DELTA_LNG = 0.005;
+const BBOX_DELTA_LAT = 0.0025;
+
+function isValidEmbedUrl(url: string): boolean {
+  const trimmed = url.trim();
+  return EMBED_PREFIXES.some((prefix) => trimmed.startsWith(prefix));
+}
+
 /**
- * Bagian "Bengkel Upcycle" (dummy dari siteConfig.workshop).
+ * Bagian "Bengkel Upcycle" (alamat + peta).
  * Dipakai di halaman Galeri dan Kontak agar datanya konsisten.
  *
- * Aturan peta (SPEC 7.5):
- * - workshop.mapEmbedUrl terisi (berformat embed) -> <iframe> lazy.
- * - kosong atau bukan URL embed -> gambar peta placeholder via SafeImage.
+ * Urutan peta (REVISION R6):
+ * 1. `mapEmbedUrl` valid  -> iframe embed (Google Maps atau OpenStreetMap).
+ * 2. `lat` + `lng` terisi -> embed OpenStreetMap (tanpa API key).
+ * 3. Selain itu           -> gambar statis lewat SafeImage.
+ * Tombol "Buka di Google Maps" memakai `mapsUrl`.
  */
 export function WorkshopSection() {
   const { workshop } = siteConfig;
-  const isEmbeddable =
-    workshop.mapEmbedUrl.trim().length > 0 &&
-    workshop.mapEmbedUrl.includes("/embed");
+
+  const embedUrl = workshop.mapEmbedUrl?.trim() ?? "";
+  const hasEmbed = isValidEmbedUrl(embedUrl);
+  const hasCoords =
+    typeof workshop.lat === "number" && typeof workshop.lng === "number";
+
+  const openStreetMapUrl =
+    hasCoords && !hasEmbed
+      ? `https://www.openstreetmap.org/export/embed.html?bbox=${
+          workshop.lng! - BBOX_DELTA_LNG
+        },${workshop.lat! - BBOX_DELTA_LAT},${workshop.lng! + BBOX_DELTA_LNG},${
+          workshop.lat! + BBOX_DELTA_LAT
+        }&layer=mapnik&marker=${workshop.lat},${workshop.lng}`
+      : null;
+
+  const mapFrameClass = "aspect-video w-full overflow-hidden rounded-2xl";
 
   return (
     <section className="border-t border-line bg-sage-50 py-16 sm:py-24">
@@ -75,27 +105,60 @@ export function WorkshopSection() {
             </div>
           </div>
 
-          {/* Peta: iframe bila URL embed, placeholder bila tidak */}
-          <div className="relative overflow-hidden rounded-2xl border border-line bg-white shadow-soft">
-            {isEmbeddable ? (
-              <iframe
-                src={workshop.mapEmbedUrl}
-                title={`Peta lokasi bengkel ${workshop.name} di ${workshop.address}`}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-                className="h-80 w-full border-0 sm:h-96 lg:h-[420px]"
-              />
-            ) : (
-              <SafeImage
-                src="/images/gallery/map-placeholder.webp"
-                alt={`Peta lokasi bengkel ${workshop.name} di ${workshop.address}`}
-                width={800}
-                height={500}
-                className="h-80 w-full object-cover sm:h-96 lg:h-[420px]"
-                fallbackLabel="Peta lokasi bengkel"
-              />
-            )}
+          {/* Peta: embed valid -> OSM (koordinat) -> gambar statis */}
+          <div className="flex flex-col gap-4">
+            <div className="relative bg-white shadow-soft">
+              {hasEmbed ? (
+                <iframe
+                  src={embedUrl}
+                  title={`Peta lokasi bengkel ${workshop.name} di ${workshop.address}`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                  className={`${mapFrameClass} border-0`}
+                />
+              ) : openStreetMapUrl ? (
+                <iframe
+                  src={openStreetMapUrl}
+                  title={`Peta lokasi bengkel ${workshop.name} di ${workshop.address}`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className={`${mapFrameClass} border-0`}
+                />
+              ) : (
+                <SafeImage
+                  src="/images/brand/peta-bengkel.webp"
+                  alt={`Peta lokasi bengkel ${workshop.name} di ${workshop.address}`}
+                  width={800}
+                  height={450}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="aspect-video w-full object-cover"
+                  fallbackLabel="Peta lokasi bengkel"
+                />
+              )}
+            </div>
+
+            {/* Alamat ringkas + tombol buka peta, tepat di bawah peta */}
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm text-ink-muted">
+                <MapPin
+                  className="mr-1.5 inline h-4 w-4 align-[-3px] text-moss-600"
+                  aria-hidden="true"
+                />
+                {workshop.address}
+              </p>
+              {workshop.mapsUrl && (
+                <a
+                  href={workshop.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-moss-600 px-5 text-xs font-semibold uppercase tracking-wider text-moss-600 transition-colors duration-150 hover:bg-sage-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2"
+                >
+                  Buka di Google Maps
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
