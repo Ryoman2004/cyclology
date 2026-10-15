@@ -10,7 +10,7 @@ import { CTABanner } from "@/components/sections/CTABanner";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SafeImage } from "@/components/ui/SafeImage";
-import { Leaf, MessageCircle, ShoppingBag, Sparkles } from "lucide-react";
+import { Leaf, MessageCircle, ShoppingBag } from "lucide-react";
 import { products } from "@/data/products";
 import { categories } from "@/data/categories";
 import { heroImages } from "@/data/heroes";
@@ -41,7 +41,7 @@ export default function Home() {
             <Button
               variant="ghost"
               href="/tentang"
-              icon={<Sparkles className="h-4 w-4" />}
+              icon={<Leaf className="h-4 w-4" />}
             >
               Kenali Cyclology
             </Button>

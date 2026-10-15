@@ -9,8 +9,8 @@ import {
   X,
   MessageCircle,
   Home,
+  Leaf,
   ShoppingBag,
-  Sparkles,
   Image as ImageIcon,
   FileText,
   HelpCircle,
@@ -27,7 +27,7 @@ export interface NavbarProps {
 const navLinks = [
   { name: "Beranda", href: "/", icon: Home },
   { name: "Produk", href: "/produk", icon: ShoppingBag },
-  { name: "Tentang", href: "/tentang", icon: Sparkles },
+  { name: "Tentang", href: "/tentang", icon: Leaf },
   { name: "Blog", href: "/blog", icon: FileText },
   { name: "Galeri", href: "/galeri", icon: ImageIcon },
   { name: "FAQ", href: "/faq", icon: HelpCircle },
