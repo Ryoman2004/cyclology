@@ -23,19 +23,19 @@ export const siteConfig = {
       name: "Syifa Aulia Akfina",
       role: "Co-Founder",
       photo: "/images/brand/founder-syifa.webp",
-      bio: "", // diisi pemilik; kosong berarti bio disembunyikan di UI
+      bio: "Fokus pada kurasi desain produk, eksplorasi material ramah lingkungan, serta riset kualitas kriya upcycle bersama komunitas bengkel lokal.", // diisi pemilik; kosong berarti bio disembunyikan di UI
     },
     {
       name: "Syaza Ghaisani Nadinda",
       role: "Co-Founder",
       photo: "/images/brand/founder-syaza.webp",
-      bio: "", // diisi pemilik; kosong berarti bio disembunyikan di UI
+      bio: "Mengelola kemitraan rantai pasok pengrajin lokal, operasional sirkular, dan strategi perluasan dampak sosial di berbagai wilayah binaan.", // diisi pemilik; kosong berarti bio disembunyikan di UI
     },
     {
       name: "Rulyan Akasdo",
       role: "Co-Founder",
       photo: "/images/brand/founder-rulyan.webp",
-      bio: "", // diisi pemilik; kosong berarti bio disembunyikan di UI
+      bio: "Membangun sebuah platform Eco-commerce sebagai tempat untuk menjual dan mempromosikan hasil produk kami maupun mitra yang bekerjasama", // diisi pemilik; kosong berarti bio disembunyikan di UI
     },
   ],
   // Bagian "Bengkel" di Galeri (peta + alamat). SEMUA DUMMY, diganti pemilik nanti.
