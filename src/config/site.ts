@@ -31,6 +31,12 @@ export const siteConfig = {
       photo: "/images/brand/founder-syaza.webp",
       bio: "", // diisi pemilik; kosong berarti bio disembunyikan di UI
     },
+    {
+      name: "Rulyan Akasdo",
+      role: "Co-Founder",
+      photo: "/images/brand/founder-rulyan.webp",
+      bio: "", // diisi pemilik; kosong berarti bio disembunyikan di UI
+    },
   ],
   // Bagian "Bengkel" di Galeri (peta + alamat). SEMUA DUMMY, diganti pemilik nanti.
   workshop: {

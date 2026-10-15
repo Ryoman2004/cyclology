@@ -112,7 +112,7 @@ export default function TentangPage() {
       />
 
       {/* Strip tiga penekanan */}
-      <section className="py-6">
+      <section className="pt-10 sm:pt-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="grid grid-cols-1 gap-4 rounded-2xl border border-line bg-white p-6 shadow-soft sm:grid-cols-3 sm:gap-6 sm:p-8">
@@ -121,14 +121,14 @@ export default function TentangPage() {
                 { icon: Users, label: "Pengrajin Lokal" },
                 { icon: Leaf, label: "Bahan dari Barang Bekas" },
               ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-3">
+                <div key={label} className="flex items-center gap-4">
                   <span
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sage-50 text-moss-600"
+                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-sage-50 text-moss-600"
                     aria-hidden="true"
                   >
-                    <Icon className="h-5 w-5" strokeWidth={1.75} />
+                    <Icon className="h-6 w-6" strokeWidth={1.75} />
                   </span>
-                  <span className="text-sm font-semibold uppercase tracking-wide text-moss-600">
+                  <span className="text-base font-semibold uppercase tracking-wide text-moss-600">
                     {label}
                   </span>
                 </div>
@@ -246,24 +246,24 @@ export default function TentangPage() {
                 <span className="font-serif italic text-terracotta-700">Kami</span>
               </>
             }
-            subtitle="Dua sosok di balik perintisan misi sirkular dan kurasi kriya."
+            subtitle="Tiga sosok di balik perintisan misi sirkular dan kurasi kriya."
           />
 
-          <div className="mx-auto mt-12 grid w-full max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+          <div className="mx-auto mt-10 grid w-full max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
             {siteConfig.founders.map((founder, index) => (
               <FadeIn key={founder.name} delay={index * 100}>
-                <article className="flex h-full flex-col gap-4 rounded-2xl border border-line bg-white p-6 shadow-soft sm:p-7">
-                  <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-2xl bg-sage-50">
+                <article className="flex h-full flex-col gap-5 overflow-hidden rounded-2xl border border-line bg-white p-5 shadow-soft sm:p-6">
+                  <div className="relative aspect-4/5 w-full overflow-hidden rounded-xl bg-sage-50">
                     <SafeImage
                       src={founder.photo}
                       alt={`Foto ${founder.name}`}
                       fill
-                      sizes="160px"
+                      sizes="(min-width: 768px) 33vw, 100vw"
                       className="object-cover"
                       fallbackLabel={founder.name}
                     />
                   </div>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-1 flex-col gap-2">
                     <h3 className="text-lg font-semibold text-moss-600">
                       {founder.name}
                     </h3>
