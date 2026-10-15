@@ -21,6 +21,11 @@ export interface PageHeroProps {
   chips?: React.ReactNode;
   /** Opasitas foto latar. Default 20% (mobile sedikit lebih rendah). */
   intensity?: "soft" | "normal";
+  /**
+   * "light" = hero krem (default, halaman pada umumnya).
+   * "dark"   = hero gelap: teks putih di atas foto workshop + overlay moss-900.
+   */
+  tone?: "light" | "dark";
 }
 
 /**
@@ -37,11 +42,19 @@ export function PageHero({
   aside,
   chips,
   intensity = "normal",
+  tone = "light",
 }: PageHeroProps) {
-  const photoOpacity = intensity === "soft" ? "opacity-10 sm:opacity-15" : "opacity-15 sm:opacity-20";
+  const isDark = tone === "dark";
+  const photoOpacity = isDark
+    ? "opacity-100"
+    : intensity === "soft"
+      ? "opacity-10 sm:opacity-15"
+      : "opacity-15 sm:opacity-20";
 
   return (
-    <section className="relative isolate overflow-hidden bg-cream">
+    <section
+      className={`relative isolate overflow-hidden ${isDark ? "bg-moss-900" : "bg-cream"}`}
+    >
       {/* Foto latar (dekoratif) */}
       <SafeImage
         src={image}
@@ -53,7 +66,9 @@ export function PageHero({
         className={`object-cover ${photoOpacity}`}
       />
       {/* Overlay warna solid, bukan gradient */}
-      <div className="absolute inset-0 bg-cream/70" />
+      <div
+        className={`absolute inset-0 ${isDark ? "bg-moss-900/70" : "bg-cream/70"}`}
+      />
 
       <div className="relative mx-auto max-w-300 px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
         {breadcrumb && (
@@ -68,18 +83,31 @@ export function PageHero({
           }
         >
           <div className="flex flex-col items-start gap-5">
-            {eyebrow && (
-              <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-700">
-                {eyebrow}
-              </span>
-            )}
+            {eyebrow &&
+              (isDark ? (
+                <span className="rounded-full bg-sage-200 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-moss-700">
+                  {eyebrow}
+                </span>
+              ) : (
+                <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-700">
+                  {eyebrow}
+                </span>
+              ))}
 
-            <h1 className="text-3xl font-bold leading-[1.1] tracking-tight text-moss-600 sm:text-4xl lg:text-5xl">
+            <h1
+              className={`text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl ${
+                isDark ? "text-white" : "text-moss-600"
+              }`}
+            >
               {title}
             </h1>
 
             {description && (
-              <p className="max-w-2xl text-base leading-relaxed text-ink-muted">
+              <p
+                className={`max-w-2xl text-base leading-relaxed ${
+                  isDark ? "text-sage-200" : "text-ink-muted"
+                }`}
+              >
                 {description}
               </p>
             )}
@@ -89,7 +117,13 @@ export function PageHero({
             )}
 
             {chips && (
-              <div className="flex flex-wrap items-center gap-2 pt-1">{chips}</div>
+              <div
+                className={`flex flex-wrap items-center gap-2 pt-1 text-xs font-medium ${
+                  isDark ? "text-sage-200" : "text-ink-muted"
+                }`}
+              >
+                {chips}
+              </div>
             )}
           </div>
 

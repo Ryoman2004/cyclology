@@ -18,14 +18,13 @@ import { heroImages } from "@/data/heroes";
 export default function Home() {
   return (
     <main className="flex-1">
-      <PageHero
+<PageHero
+        tone="dark"
         eyebrow="Produk Daur Ulang Lokal"
         title={
           <>
             Barang bekas,{" "}
-            <span className="font-serif italic text-terracotta-700">
-              cerita baru.
-            </span>
+            <span className="font-serif italic text-sage-200">cerita baru.</span>
           </>
         }
         description="Koleksi kurasi aksesoris, busana perca, dan perlengkapan rumah daur ulang karya pengrajin Indonesia. Mengurangi jejak sampah dengan sentuhan estetika mindful."
@@ -33,14 +32,14 @@ export default function Home() {
         actions={
           <>
             <Button
-              variant="primary"
+              variant="light"
               href="/produk"
               icon={<ShoppingBag className="h-4 w-4" />}
             >
               Belanja Sekarang
             </Button>
             <Button
-              variant="outline"
+              variant="ghost"
               href="/tentang"
               icon={<Sparkles className="h-4 w-4" />}
             >
@@ -50,17 +49,18 @@ export default function Home() {
         }
         chips={
           <>
-            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-ink-muted">
-              <MessageCircle className="h-3.5 w-3.5 text-moss-600" aria-hidden="true" />
+            <span className="inline-flex items-center gap-1.5">
+              <MessageCircle className="h-3.5 w-3.5 text-sage-200" aria-hidden="true" />
               Pesan langsung via WhatsApp
             </span>
-            <span className="text-xs font-medium text-ink-muted">
+            <span aria-hidden="true">&middot;</span>
+            <span>
               {products.length} produk &middot; {categories.length} kategori
             </span>
           </>
         }
         aside={
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-line bg-sage-50 shadow-soft">
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/60 bg-sage-50 shadow-soft">
             <SafeImage
               src={heroImages.homeProduct.src}
               alt={heroImages.homeProduct.alt}

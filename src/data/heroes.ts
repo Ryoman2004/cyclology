@@ -19,13 +19,13 @@ export interface HeroImage {
 
 export const heroImages = {
   home: {
-    src: "/images/hero/hero-beranda.webp",
-    alt: "Bahan daur ulang: potongan kain dan tekstur denim",
-    page: "Beranda",
+    src: "/images/hero/home/background-home-hero.webp",
+    alt: "Bengkel upcycle: pengrajin menjahit denim di meja kerja",
+    page: "Beranda (latar)",
   },
   homeProduct: {
-    src: "/images/hero/hero-beranda-produk.webp",
-    alt: "Tas denim, vas kaca, dan produk upcycle di atas meja kayu",
+    src: "/images/hero/home/gambar-home-hero.webp",
+    alt: "Tas denim upcycle dan vas kaca di atas meja kayu",
     page: "Beranda (foto produk)",
   },
   products: {
@@ -59,13 +59,13 @@ export const heroImages = {
     page: "Kampanye",
   },
   faq: {
-    src: "/images/hero/hero-beranda.webp",
-    alt: "Bahan daur ulang: potongan kain dan tekstur denim",
+    src: "/images/hero/home/background-home-hero.webp",
+    alt: "Bengkel upcycle: pengrajin menjahit denim di meja kerja",
     page: "FAQ",
   },
   impact: {
-    src: "/images/hero/hero-tentang.webp",
-    alt: "Tangan pengrajin menjahit di bengkel",
+    src: "/images/hero/home/background-home-hero.webp",
+    alt: "Bengkel upcycle: pengrajin menjahit denim di meja kerja",
     page: "Eco-Impact",
   },
 } as const satisfies Record<string, HeroImage>;

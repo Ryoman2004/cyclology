@@ -120,6 +120,7 @@ Aturan:
 - Tinggi `py-14 sm:py-16 lg:py-24`.
 - Isi: `eyebrow` (label `terracotta-700` uppercase), `title` (H1 700, aksen Lora sesuai aturan di atas), `description`, `actions` (tombol), `chips` (chip kecil), `aside` (kartu/kolase/statistik di kanan), `breadcrumb`.
 - Sumber foto latar: `src/data/heroes.ts` dan `scripts/photo-manifest.json`. Selalu file lokal di `public/images/hero/`.
+- **`tone="dark"`** dipakai oleh hero Beranda: latar `bg-moss-900`, overlay `bg-moss-900/70`, foto tampil penuh (tanpa pengurangan opacity), judul `text-white`, deskripsi `text-sage-200`, `eyebrow` jadi pil `bg-sage-200` + teks `moss-700`, dan tombol memakai varian `light` (putih) serta `ghost` (garis putih transparan). Aksen Lora pada judul gelap memakai `sage-200` (bukan `terracotta-700`) agar kontras aman di atas foto. Tetap tanpa gradient.
 
 ## 5. Gambar dan fotografi
 - Gaya: cahaya alami, latar netral hangat (kayu terang, linen, krem), produk terlihat jelas, tanpa filter berlebihan.

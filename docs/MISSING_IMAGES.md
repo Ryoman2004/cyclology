@@ -4,16 +4,21 @@
 >
 > Sumber query foto: `scripts/photo-manifest.json`
 
-**Ringkasan:** 60 gambar dirujuk · 50 tersedia · **10 belum ada**.
+**Ringkasan:** 60 gambar dirujuk · 52 tersedia · **8 belum ada**.
 Semua gambar hilang adalah foto baru (latar hero per halaman, foto cerita, peta statis) —
 bukan gambar produk/artikel yang sudah ada.
+
+### Sudah terpasang (dari pemilik)
+
+| Path file | Dipakai untuk |
+|---|---|
+| `public/images/hero/home/background-home-hero.webp` | Latar hero Beranda, sekaligus latar FAQ dan Eco-Impact |
+| `public/images/hero/home/gambar-home-hero.webp` | Foto produk di sisi kanan hero Beranda |
 
 ## Gambar yang belum ada
 
 | Path file | Dipakai untuk | Rekomendasi query foto | Ukuran |
 |---|---|---|---|
-| `public/images/hero/hero-beranda.webp` | Latar hero Beranda | `recycled fabric scraps denim texture` | 1600x900 |
-| `public/images/hero/hero-beranda-produk.webp` | Foto produk jadi di sisi kanan hero Beranda (menggantikan foto ruang rapat yang salah) | `denim tote bag glass vase wooden table natural light` | 1600x900 |
 | `public/images/hero/hero-produk.webp` | Latar hero Katalog Produk | `handmade recycled products flat lay` | 1600x900 |
 | `public/images/hero/hero-tentang.webp` | Latar hero Tentang | `craft workshop hands sewing` | 1600x900 |
 | `public/images/hero/hero-blog.webp` | Latar hero Blog | `notebook plants desk natural light` | 1600x900 |

@@ -17,16 +17,18 @@
   },
   "heroes": [
     {
-      "file": "public/images/hero/hero-beranda.webp",
-      "query": "recycled fabric scraps denim texture",
+      "file": "public/images/hero/home/background-home-hero.webp",
+      "query": "upcycle workshop sewing denim craft studio",
       "size": "hero",
-      "for": "Latar hero Beranda"
+      "for": "Latar hero Beranda (foto bengkel, sudah ada dari pemilik)",
+      "manual": true
     },
     {
-      "file": "public/images/hero/hero-beranda-produk.webp",
+      "file": "public/images/hero/home/gambar-home-hero.webp",
       "query": "denim tote bag glass vase wooden table natural light",
       "size": "hero",
-      "for": "Foto produk jadi di sisi kanan hero Beranda (menggantikan foto ruang rapat yang salah)"
+      "for": "Foto produk di sisi kanan hero Beranda (sudah ada dari pemilik)",
+      "manual": true
     },
     {
       "file": "public/images/hero/hero-produk.webp",
