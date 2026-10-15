@@ -1,0 +1,143 @@
+{
+  "_catatan": [
+    "Manifest query foto untuk situs Cyclology.",
+    "Dipakai oleh scripts/fetch-photos.mjs (dijalankan PEMILIK, butuh API key di .env.local).",
+    "Agent AI tidak pernah menjalankan skrip tersebut (REVISION R7 butir 5)."
+  ],
+  "default": {
+    "provider": "pexels",
+    "format": "webp",
+    "quality": 82,
+    "sizes": {
+      "product": { "width": 800, "height": 800 },
+      "blog": { "width": 1600, "height": 1000 },
+      "hero": { "width": 1600, "height": 900 },
+      "brand": { "width": 1600, "height": 900 }
+    }
+  },
+  "heroes": [
+    {
+      "file": "public/images/hero/hero-beranda.webp",
+      "query": "recycled fabric scraps denim texture",
+      "size": "hero",
+      "for": "Latar hero Beranda"
+    },
+    {
+      "file": "public/images/hero/hero-beranda-produk.webp",
+      "query": "denim tote bag glass vase wooden table natural light",
+      "size": "hero",
+      "for": "Foto produk jadi di sisi kanan hero Beranda (menggantikan foto ruang rapat yang salah)"
+    },
+    {
+      "file": "public/images/hero/hero-produk.webp",
+      "query": "handmade recycled products flat lay",
+      "size": "hero",
+      "for": "Latar hero Katalog Produk"
+    },
+    {
+      "file": "public/images/hero/hero-tentang.webp",
+      "query": "craft workshop hands sewing",
+      "size": "hero",
+      "for": "Latar hero Tentang"
+    },
+    {
+      "file": "public/images/hero/hero-blog.webp",
+      "query": "notebook plants desk natural light",
+      "size": "hero",
+      "for": "Latar hero Blog"
+    },
+    {
+      "file": "public/images/hero/hero-galeri.webp",
+      "query": "upcycled fabric materials sorting",
+      "size": "hero",
+      "for": "Latar hero Galeri"
+    },
+    {
+      "file": "public/images/hero/hero-kontak.webp",
+      "query": "wooden desk plant minimal",
+      "size": "hero",
+      "for": "Latar hero Kontak"
+    },
+    {
+      "file": "public/images/hero/hero-kampanye.webp",
+      "query": "reusable tote bags natural",
+      "size": "hero",
+      "for": "Latar hero Kampanye"
+    },
+    {
+      "file": "public/images/hero/story-tentang.webp",
+      "query": "upcycle workshop sewing scrap fabric table natural light",
+      "size": "hero",
+      "for": "Blok Cerita Kami di halaman Tentang (sekarang kotak kosong)"
+    },
+    {
+      "file": "public/images/brand/peta-bengkel.webp",
+      "query": "map|location",
+      "size": "brand",
+      "for": "Gambar peta statis sebagai tingkat-3 di WorkshopSection",
+      "manual": true,
+      "catatan": "Sebaiknya screenshot peta lokasi bengkel, bukan hasil pencarian foto."
+    }
+  ],
+  "products": [
+    { "file": "public/images/products/tote-bag-denim-bekas.webp", "query": "denim tote bag handmade", "size": "product" },
+    { "file": "public/images/products/tas-selempang-banner-bekas.webp", "query": "crossbody bag upcycled banner colorful", "size": "product" },
+    { "file": "public/images/products/dompet-kulit-perca.webp", "query": "leather wallet craft minimal", "size": "product" },
+    { "file": "public/images/products/pouch-kemasan-kopi.webp", "query": "foil pouch packaging craft", "size": "product" },
+    { "file": "public/images/products/kemeja-patchwork-perca.webp", "query": "patchwork shirt fabric craft", "size": "product" },
+    { "file": "public/images/products/jaket-denim-reworked.webp", "query": "denim jacket reworked upcycle", "size": "product" },
+    { "file": "public/images/products/topi-bucket-kain-perca.webp", "query": "bucket hat fabric casual", "size": "product" },
+    { "file": "public/images/products/syal-tenun-kain-bekas.webp", "query": "woven scarf textile pattern", "size": "product" },
+    { "file": "public/images/products/vas-botol-kaca.webp", "query": "glass bottle vase upcycled", "size": "product" },
+    { "file": "public/images/products/lampu-gantung-botol.webp", "query": "glass bottle pendant lamp light", "size": "product" },
+    { "file": "public/images/products/pot-ban-bekas.webp", "query": "rubber tire planter pot plant", "size": "product" },
+    { "file": "public/images/products/hiasan-dinding-kayu-palet.webp", "query": "pallet wood wall art interior", "size": "product" },
+    { "file": "public/images/products/gelang-anyaman-plastik.webp", "query": "woven bracelet handmade craft", "size": "product" },
+    { "file": "public/images/products/kalung-kayu-daur-ulang.webp", "query": "wooden pendant necklace minimal", "size": "product" },
+    { "file": "public/images/products/anting-kertas-daur-ulang.webp", "query": "paper earrings handmade craft", "size": "product" },
+    { "file": "public/images/products/gantungan-kunci-tutup-botol.webp", "query": "bottle cap keychain craft", "size": "product" },
+    { "file": "public/images/products/alas-gelas-kain-perca.webp", "query": "fabric coasters patchwork table", "size": "product" },
+    { "file": "public/images/products/wadah-serbaguna-kaleng.webp", "query": "tin can container upcycled", "size": "product" },
+    { "file": "public/images/products/keset-anyaman-kain-bekas.webp", "query": "woven rag rug textile floor", "size": "product" },
+    { "file": "public/images/products/sarung-bantal-perca.webp", "query": "patchwork cushion pillow fabric", "size": "product" },
+    { "file": "public/images/products/buku-catatan-kertas-daur-ulang.webp", "query": "recycled paper notebook desk", "size": "product" },
+    { "file": "public/images/products/tempat-pensil-kaleng.webp", "query": "tin can pencil holder desk", "size": "product" },
+    { "file": "public/images/products/pembatas-buku-kertas-daur-ulang.webp", "query": "paper bookmarks minimal stationery", "size": "product" },
+    { "file": "public/images/products/notebook-sampul-kain-perca.webp", "query": "fabric covered notebook craft", "size": "product" }
+  ],
+  "posts": [
+    {
+      "file": "public/images/blog/5-cara-mudah-memilah-sampah-di-rumah.webp",
+      "query": "sorting household waste recycling bins",
+      "size": "blog",
+      "catatan": "Query lama terlalu mirip rak pakaian; sekarang sesuai topik memilah sampah."
+    },
+    {
+      "file": "public/images/blog/apa-bedanya-daur-ulang-upcycle-dan-reuse.webp",
+      "query": "glass jar fabric scraps reuse craft table",
+      "size": "blog",
+      "catatan": "Query lama memakai denim/rak; diperjelas menjadi konsep reuse/upcycle."
+    },
+    {
+      "file": "public/images/blog/merawat-tas-dan-pakaian-dari-bahan-daur-ulang.webp",
+      "query": "canvas bag care repair sewing kit",
+      "size": "blog"
+    },
+    {
+      "file": "public/images/blog/kisah-di-balik-jeans-bekas-yang-jadi-tote-bag.webp",
+      "query": "old jeans upcycled tote bag craft table",
+      "size": "blog"
+    },
+    {
+      "file": "public/images/blog/plastik-sekali-pakai-alternatif-yang-bisa-dimulai-hari-ini.webp",
+      "query": "reusable cloth shopping bag groceries market",
+      "size": "blog",
+      "catatan": "Query lama memakai denim/rak; sekarang sesuai topik alternatif plastik."
+    },
+    {
+      "file": "public/images/blog/ide-dekorasi-rumah-dari-botol-kaca-bekas.webp",
+      "query": "glass bottle vase home decor flowers",
+      "size": "blog"
+    }
+  ]
+}

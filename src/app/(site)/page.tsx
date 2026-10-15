@@ -13,6 +13,7 @@ import { SafeImage } from "@/components/ui/SafeImage";
 import { Leaf, MessageCircle, ShoppingBag, Sparkles } from "lucide-react";
 import { products } from "@/data/products";
 import { categories } from "@/data/categories";
+import { heroImages } from "@/data/heroes";
 
 export default function Home() {
   return (
@@ -28,7 +29,7 @@ export default function Home() {
           </>
         }
         description="Koleksi kurasi aksesoris, busana perca, dan perlengkapan rumah daur ulang karya pengrajin Indonesia. Mengurangi jejak sampah dengan sentuhan estetika mindful."
-        image="/images/gallery/proses-4-menjahit.webp"
+        image={heroImages.home.src}
         actions={
           <>
             <Button
@@ -61,8 +62,8 @@ export default function Home() {
         aside={
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-line bg-sage-50 shadow-soft">
             <SafeImage
-              src="/images/products/tote-bag-denim-bekas.webp"
-              alt="Tote bag denim buatan tangan dari barang bekas"
+              src={heroImages.homeProduct.src}
+              alt={heroImages.homeProduct.alt}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"

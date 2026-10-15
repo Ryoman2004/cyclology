@@ -7,6 +7,7 @@ import { BlogFilter } from "@/components/blog/BlogFilter";
 import { BlogLiteracyBanner } from "@/components/blog/BlogLiteracyBanner";
 import { BlogCollabCTA } from "@/components/blog/BlogCollabCTA";
 import { siteConfig } from "@/config/site";
+import { heroImages } from "@/data/heroes";
 import { posts } from "@/data/posts";
 
 export const metadata: Metadata = {
@@ -45,7 +46,7 @@ export default function BlogPage() {
           </>
         }
         description="Inspirasi, panduan daur ulang praktis, dan kisah bermakna di balik gaya hidup minim sampah bersama pengrajin lokal Nusantara."
-        image="/images/gallery/proses-7-qc.webp"
+        image={heroImages.blog.src}
         breadcrumb={[{ label: "Blog" }]}
         aside={
           <div className="flex w-full max-w-sm shrink-0 divide-x divide-line rounded-2xl border border-line bg-white px-6 py-4 shadow-soft">

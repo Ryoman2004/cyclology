@@ -8,6 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { heroImages } from "@/data/heroes";
 import { PageHero } from "@/components/sections/PageHero";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -49,7 +50,7 @@ export default function KontakPage() {
           </>
         }
         description="Punya pertanyaan seputar kurasi karya upcycle, pesanan suvenir berkelanjutan, atau sekadar ingin menyapa pengrajin lokal kami? Kami senang mendengar dari Anda."
-        image="/images/gallery/after-vas.webp"
+        image={heroImages.contact.src}
         breadcrumb={[{ label: "Kontak" }]}
         chips={
           <>

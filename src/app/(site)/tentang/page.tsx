@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { ArrowRight, Leaf, Recycle, ShoppingBag, Users } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { heroImages, storyImage } from "@/data/heroes";
 import { PageHero } from "@/components/sections/PageHero";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -88,7 +89,7 @@ export default function TentangPage() {
           </>
         }
         description={`${siteConfig.name} berkomitmen menyelamatkan material sisa pakai dan mentransformasi limbah tekstil menjadi perlengkapan artisan bernilai tahan lama, sambil mendukung pengrajin perempuan mandiri di ${siteConfig.location.city} dan sekitarnya.`}
-        image="/images/gallery/proses-6-finishing.webp"
+        image={heroImages.about.src}
         breadcrumb={[{ label: "Tentang Kami" }]}
         aside={
           <div className="flex w-full max-w-sm items-start gap-3 rounded-2xl border border-line bg-white p-5 shadow-soft">
@@ -145,8 +146,8 @@ export default function TentangPage() {
             <FadeIn>
               <div className="relative overflow-hidden rounded-2xl border border-line bg-sage-50 shadow-soft">
                 <SafeImage
-                  src="/images/hero/story-tentang.webp"
-                  alt="Suasana bengkel Cyclology saat mengolah limbah tekstil"
+                  src={storyImage.src}
+                  alt={storyImage.alt}
                   width={900}
                   height={600}
                   className="h-72 w-full object-cover sm:h-96 lg:h-[440px]"

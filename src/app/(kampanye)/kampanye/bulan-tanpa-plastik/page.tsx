@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { ArrowRight, MessageCircle, Recycle, ShieldCheck, Truck } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { heroImages } from "@/data/heroes";
 import { products } from "@/data/products";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/sections/PageHero";
@@ -111,7 +112,7 @@ export default function KampanyeBulanTanpaPlastikPage() {
           </>
         }
         description="Ganti kebiasaan kantong sekali pakai dengan karya upcycle tahan lama buatan tangan perajin lokal."
-        image="/images/products/tote-bag-denim-bekas.webp"
+        image={heroImages.campaign.src}
         actions={
           <>
             <Button

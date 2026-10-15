@@ -9,6 +9,7 @@ import { ProductGrid } from "@/components/product/ProductGrid";
 import { PageHero } from "@/components/sections/PageHero";
 import { categories, type CategorySlug } from "@/data/categories";
 import { products } from "@/data/products";
+import { heroImages } from "@/data/heroes";
 
 const PAGE_SIZE = 12;
 
@@ -105,7 +106,7 @@ export function ProductCatalog() {
         eyebrow="Kurasi Ramah Lingkungan"
         title="Katalog Semua Produk"
         description="Temukan kurasi karya upcycle unik buatan tangan pengrajin lokal untuk keseharian sadar lingkunganmu."
-        image="/images/gallery/proses-8-pengemasan.webp"
+        image={heroImages.products.src}
         breadcrumb={[{ label: "Produk" }]}
         aside={
           <div className="flex flex-wrap items-center gap-2">

@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { MessageCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { heroImages } from "@/data/heroes";
 import { faqs } from "@/data/faq";
 import { Accordion } from "@/components/ui/Accordion";
 import { PageHero } from "@/components/sections/PageHero";
@@ -40,7 +41,7 @@ export default function FaqPage() {
           </>
         }
         description="Temukan jawaban seputar pemesanan, produk daur ulang, dan pengiriman dari tim Cyclology."
-        image="/images/gallery/proses-5-merakit.webp"
+        image={heroImages.faq.src}
         breadcrumb={[{ label: "Tanya Jawab" }]}
       />
       {/* Accordion FAQ */}

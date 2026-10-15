@@ -1,44 +1,67 @@
-# MISSING_IMAGES — Daftar Gambar yang Belum Ada
+# MISSING_IMAGES — Gambar yang Belum Ada di `public/`
 
-Dokumen ini dibuat pada tugas **R5** (`docs/REVISION.md`). R7 akan menambah skrip
-`scripts/check-images.mjs` untuk memindai semua path gambar secara otomatis; daftar
-di bawah adalah hasil pemeriksaan manual untuk halaman yang sedang dikerjakan.
+>Dihasilkan oleh **R7**. Perbarui dengan: `node scripts/check-images.mjs --write`
+>
+> Sumber query foto: `scripts/photo-manifest.json`
 
-Format: **path file** | **dirujuk di** | **rekomendasi query foto** | **ukuran**
+**Ringkasan:** 60 gambar dirujuk · 50 tersedia · **10 belum ada**.
+Semua gambar hilang adalah foto baru (latar hero per halaman, foto cerita, peta statis) —
+bukan gambar produk/artikel yang sudah ada.
 
-## Gambar hilang
+## Gambar yang belum ada
 
-| Path file | Dirujuk di | Rekomendasi query foto | Ukuran |
+| Path file | Dipakai untuk | Rekomendasi query foto | Ukuran |
 |---|---|---|---|
-| `public/images/hero/story-tentang.webp` | `src/app/(site)/tentang/page.tsx` (blok "Cerita Kami") | `"upcycle workshop sewing scrap fabric table natural light"` | 1600x900 |
-| `public/images/brand/peta-bengkel.webp` | `src/components/sections/WorkshopSection.tsx` (tingkat 3 peta) | screenshot peta statis lokasi bengkel di Depok | 1600x900 |
+| `public/images/hero/hero-beranda.webp` | Latar hero Beranda | `recycled fabric scraps denim texture` | 1600x900 |
+| `public/images/hero/hero-beranda-produk.webp` | Foto produk jadi di sisi kanan hero Beranda (menggantikan foto ruang rapat yang salah) | `denim tote bag glass vase wooden table natural light` | 1600x900 |
+| `public/images/hero/hero-produk.webp` | Latar hero Katalog Produk | `handmade recycled products flat lay` | 1600x900 |
+| `public/images/hero/hero-tentang.webp` | Latar hero Tentang | `craft workshop hands sewing` | 1600x900 |
+| `public/images/hero/hero-blog.webp` | Latar hero Blog | `notebook plants desk natural light` | 1600x900 |
+| `public/images/hero/hero-galeri.webp` | Latar hero Galeri | `upcycled fabric materials sorting` | 1600x900 |
+| `public/images/hero/hero-kontak.webp` | Latar hero Kontak | `wooden desk plant minimal` | 1600x900 |
+| `public/images/hero/hero-kampanye.webp` | Latar hero Kampanye | `reusable tote bags natural` | 1600x900 |
+| `public/images/hero/story-tentang.webp` | Blok "Cerita Kami" di halaman Tentang (saat ini kotak kosong) | `upcycle workshop sewing scrap fabric table natural light` | 1600x900 |
+| `public/images/brand/peta-bengkel.webp` | Gambar peta statis tingkat-3 di `WorkshopSection` | **manual** — screenshot peta lokasi bengkel | 1600x900 |
+
+## Foto yang sengaja diperbarui (query)
+
+Foto artikel berikut sudah tersedia, tetapi query-nya diperbarui agar lebih cocok dengan topik:
+
+| File | Topik artikel | Query baru |
+|---|---|---|
+| `5-cara-mudah-memilah-sampah-di-rumah.webp` | Memilah sampah | `sorting household waste recycling bins` |
+| `apa-bedanya-daur-ulang-upcycle-dan-reuse.webp` | Daur ulang vs upcycle vs reuse | `glass jar fabric scraps reuse craft table` |
+| `plastik-sekali-pakai-alternatif-yang-bisa-dimulai-hari-ini.webp` | Alternatif plastik sekali pakai | `reusable cloth shopping bag groceries market` |
+
+Untuk mengganti salah satu foto saja:
+
+```bash
+node --env-file=.env.local scripts/fetch-photos.mjs --replace public/images/blog/<file>.webp "query baru" --pick 2
+```
+
+Naikkan angka `--pick` bila hasilnya belum cocok. Foto milik sendiri cukup disimpan di path yang sama.
+
+## Cara memasang semua foto
+
+Pemilik menjalankan (butuh API key di `.env.local`):
+
+```bash
+node --env-file=.env.local scripts/fetch-photos.mjs
+```
+
+Skrip melewati file yang sudah ada, jadi aman dijalankan berulang kali.
+Entry `peta-bengkel.webp` ditandai `manual` dan dilewati — pasang screenshot peta sendiri.
 
 ## Catatan teknis
 
-- Halaman **Tentang** memakai `SafeImage` untuk blok "Cerita Kami". `SafeImage`
-  **tidak dihapus**: begitu file foto tersedia, gambar langsung tampil tanpa ubah kode.
-- Peta bengkel (R6) sekarang memakai embed **OpenStreetMap** karena
-  `siteConfig.workshop.lat` / `lng` sudah terisi. File
-  `public/images/brand/peta-bengkel.webp` hanya dipakai sebagai tingkat 3 (fallback)
-  bila koordinat dikosongkan pemilik.
-- Foto Beranda juga akan diganti pada R7 (sekarang masih memakai
-  `public/images/gallery/proses-4-menjahit.webp` sebagai latar `PageHero`).
-
-## Panduan pemilik: memasang URL embed Google Maps
-
-Peta OpenStreetMap berjalan, tetapi bila ingin tampilan Google Maps asli:
-
-1. Buka Google Maps di laptop, cari lokasi bengkel.
-2. Klik **Bagikan > Sematkan peta (Embed a map) > Salin HTML**.
-3. Dari potongan `<iframe src="...">`, salin **hanya nilai di dalam `src="..."`**.
-4. Tempel ke `mapEmbedUrl` di `src/config/site.ts` (nilainya harus diawali
-   `https://www.google.com/maps/embed`). Link_maps biasa tetap di `mapsUrl`.
-
-Bila `mapEmbedUrl` tidak valid, komponen otomatis mengabaikannya dan memakai
-OpenStreetMap — jadi kesalahan tempel tidak membuat peta kosong.
+- Semua gambar dimuat lewat `SafeImage`, jadi halaman tetap rapi meski file belum ada
+  (muncul blok warna tema + ikon daun).
+- Latar `PageHero` memakai opasitas 15-20% di atas overlay cream, sehingga foto yang
+  belum terpasang tetap tidak mengganggu keterbacaan teks.
+- Foto hero `hero-craft.webp` (ruang rapat gelap) tidak lagi dipakai di mana pun.
 
 ## Teks contoh
 
-Bagian "Cerita Kami" pada halaman Tentang masih berisi **teks contoh** (sudah
-dibebaskan dari tahun berdiri dan nama kota karangan pada tugas R0/R2).
-Pemilik diminta menggantinya dengan cerita asli bengkel sebelum situs dipublikasikan.
+Bagian "Cerita Kami" pada halaman Tentang masih berisi **teks contoh** (sudah dibebaskan dari
+tahun berdiri dan nama kota karangan pada R0/R2). Pemilik diminta menggantinya dengan cerita
+asli bengkel sebelum situs dipublikasikan.

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { heroImages } from "@/data/heroes";
 import { beforeAfterGallery, processGallery } from "@/data/gallery";
 import { Badge } from "@/components/ui/Badge";
 import { PageHero } from "@/components/sections/PageHero";
@@ -40,7 +41,7 @@ export default function GaleriPage() {
           </>
         }
         description="Saksikan bagaimana barang bekas yang terabaikan bertransformasi menjadi produk fungsional bernilai tinggi melalui sentuhan tangan terampil pengrajin lokal Nusantara."
-        image="/images/gallery/before-jeans.webp"
+        image={heroImages.gallery.src}
         breadcrumb={[{ label: "Galeri" }]}
         chips={
           <>

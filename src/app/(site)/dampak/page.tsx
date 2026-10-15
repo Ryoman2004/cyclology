@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { ArrowRight, Calculator, Leaf } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { heroImages } from "@/data/heroes";
 import { products } from "@/data/products";
 import { categories } from "@/data/categories";
 import { Button } from "@/components/ui/Button";
@@ -75,7 +76,7 @@ export default function DampakPage() {
           </>
         }
         description="Kami percaya transparansi adalah bagian dari tanggung jawab. Berikut catatan dampak sosial dan lingkungan dari perjalanan Cyclology."
-        image="/images/gallery/after-hiasan-dinding.webp"
+        image={heroImages.impact.src}
         breadcrumb={[{ label: "Dampak" }]}
       />
 
