@@ -55,7 +55,7 @@ Tugas **R1** (lihat `docs/REVISION.md`): membandingkan `design/*.png` dengan imp
 |---|---|---|---|---|
 | Breadcrumb + badge "TENTANG CYCLOLOGY" | Ada | Ada | Sesuai | — |
 | H1 + aksen "Karya Bernilai Guna." | Ada | Ada | Sesuai | — |
-| Teks hero | Menyebut "Yogyakarta" | Sudah dinetralkan (R0) | Sesuai | — |
+| Teks hero | Menyebut nama kota karangan | Sudah dinetralkan (R0) | Sesuai | — |
 | Kartu "ATELIER TERVERIFIKASI" | Ada | Diganti "Dikerjakan Tangan" | Sengaja dilewati (klaim terlarang) | — |
 | Chip statistik (1,2+ Ton / 24+ Mitra / 100% Sirkular) | 3 chip bernomor | 3 chip teks tanpa angka | Beda (angka dummy) | P2 |
 | **Foto "Cerita Kami"** | Foto utama + foto inset tumpang tindih + badge lokasi | 1 foto; file `hero/story-tentang.webp` **belum ada** → kotak kosong | **Hilang** | **P1** |
@@ -67,7 +67,7 @@ Tugas **R1** (lihat `docs/REVISION.md`): membandingkan `design/*.png` dengan imp
 | "Cara Kerja Kami" 3 kartu bernomor | Ada | Ada | Sesuai | — |
 | CTA: badge + 2 tombol | 2 tombol | 1 tombol | Beda | P3 |
 | Lingkaran dekoratif pada CTA | Ada | Tidak ada | Sengaja dilewati (blob dilarang) | — |
-| Lokasi "Yogyakarta / Kasongan" | Ada di desain | Sudah diganti Depok dari `siteConfig` (R0) | Sesuai | — |
+| Lokasi karangan pada desain | Ada di desain | Sudah diganti Depok dari `siteConfig` (R0) | Sesuai | — |
 
 ---
 
@@ -137,7 +137,7 @@ Tugas **R1** (lihat `docs/REVISION.md`): membandingkan `design/*.png` dengan imp
 | Grid 8 kartu proses + nomor + chip tahap | Ada | Ada | Sesuai | — |
 | Baris bawah kartu proses (ikon + teks) | Ada | Tidak ada | Hilang | P3 |
 | **Peta lokasi bengkel** | Gambar peta nyata | Placeholder ("Peta lokasi bengkel") | **Beda** | **P1** |
-| Nama kota pada judul bengkel | "Yogyakarta" | Depok dari `siteConfig` (R0) | Sesuai | — |
+| Nama kota pada judul bengkel | Nama kota karangan | Depok dari `siteConfig` (R0) | Sesuai | — |
 | CTA kolaborasi | Ada | Ada | Sesuai | — |
 | Lingkaran dekoratif pada CTA | Ada | Tidak ada | Sengaja dilewati | — |
 

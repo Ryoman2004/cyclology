@@ -17,11 +17,11 @@ import { WorkshopSection } from "@/components/sections/WorkshopSection";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
-  title: `Hubungi Kami — ${siteConfig.name}`,
+  title: `Kontak — ${siteConfig.name}`,
   description:
     "Hubungi tim Cyclology untuk pemesanan, kolaborasi, atau pertanyaan seputar karya daur ulang kami.",
   openGraph: {
-    title: `Hubungi Kami — ${siteConfig.name}`,
+title: `Kontak — ${siteConfig.name}`,
     description:
       "Hubungi tim Cyclology untuk pemesanan, kolaborasi, atau pertanyaan seputar karya daur ulang.",
     url: `${siteConfig.url}/kontak`,
@@ -40,7 +40,7 @@ export default function KontakPage() {
       {/* Header */}
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: "Hubungi Kami" }]} className="mb-6" />
+          <Breadcrumb items={[{ label: "Kontak" }]} className="mb-6" />
           <div className="flex max-w-3xl flex-col gap-5">
             <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-700">
               Hubungi Kami

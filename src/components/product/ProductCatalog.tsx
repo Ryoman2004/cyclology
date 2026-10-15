@@ -114,10 +114,8 @@ export function ProductCatalog() {
               </h1>
             </div>
             <p className="text-sm leading-relaxed text-ink-muted sm:text-base lg:text-right">
-              Temukan kurasi karya{" "}
-              <span className="font-serif italic text-moss-700">upcycle</span>{" "}
-              unik buatan tangan pengrajin lokal untuk keseharian sadar
-              lingkunganmu.
+              Temukan kurasi karya upcycle unik buatan tangan pengrajin lokal
+              untuk keseharian sadar lingkunganmu.
             </p>
           </div>
         </div>

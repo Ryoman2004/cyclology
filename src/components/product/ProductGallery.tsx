@@ -28,9 +28,9 @@ export function ProductGallery({ product }: ProductGalleryProps) {
           className="object-cover"
           fallbackLabel={product.name}
         />
-        {/* Badge "100% Upcycled" pojok kiri atas */}
+        {/* Badge "100% Karya Upcycle" pojok kiri atas */}
         <div className="absolute left-3 top-3 z-10">
-          <Badge variant="terracotta">100% Upcycled</Badge>
+          <Badge variant="terracotta">100% Karya Upcycle</Badge>
         </div>
         {/* Chip dampak pojok kanan bawah */}
         <div className="absolute bottom-3 right-3 z-10">

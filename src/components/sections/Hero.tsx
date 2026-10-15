@@ -56,11 +56,11 @@ export function Hero() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               priority
               className="object-cover"
-              fallbackLabel="Koleksi 100% Upcycled Artistry"
+              fallbackLabel="Karya Upcycle 100%"
             />
             <div className="absolute bottom-4 left-4 z-10">
               <Badge variant="terracotta" icon={<Sparkles className="h-3.5 w-3.5" />}>
-                100% Upcycled Artistry
+                100% Karya Upcycle
               </Badge>
             </div>
           </div>

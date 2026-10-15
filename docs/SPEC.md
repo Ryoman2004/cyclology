@@ -66,10 +66,12 @@ export const siteConfig = {
   // Bagian "Bengkel" di Galeri (peta + alamat). SEMUA DUMMY, diganti pemilik nanti.
   workshop: {
     name: "Bengkel Upcycle Cyclology",
-    address: "Kasongan, Bantul, D.I. Yogyakarta",   // dummy
+    address: "Meruyung, Limo, Depok, Jawa Barat",   // dummy
     hours: "Senin - Sabtu, 09.00 - 17.00 WIB",     // dummy
     mapEmbedUrl: "",                               // isi dengan URL embed Google Maps asli
   },
+  // Lokasi kota/provinsi. Semua teks halaman memakai nilai ini.
+  location: { city: "Depok", province: "Jawa Barat" },
 };
 ```
 
