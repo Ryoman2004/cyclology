@@ -140,7 +140,7 @@ export default function GaleriPage() {
                 <span className="font-serif italic text-terracotta-700">Proses</span>
               </>
             }
-            subtitle="Ketelitian, kesabaran, dan dedikasi pengrajin lokal pada setiap jahitan dan poesan. Transparansi penuh dari limbah mentah hingga siap Anda gunakan."
+            subtitle="Ketelitian, kesabaran, dan dedikasi pengrajin lokal pada setiap jahitan dan potongan material. Transparansi penuh dari limbah mentah hingga siap Anda gunakan."
             className="w-full"
           />
 
@@ -157,7 +157,7 @@ export default function GaleriPage() {
                       className="object-cover"
                       fallbackLabel={step.title}
                     />
-                    <span className="absolute left-2 top-2 rounded-full bg-moss-600 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white">
+<span className="absolute left-2 top-2 rounded-full bg-moss-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
                       Tahap {step.step}
                     </span>
                   </div>

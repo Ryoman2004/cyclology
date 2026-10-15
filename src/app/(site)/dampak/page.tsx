@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { ArrowRight, Calculator, Leaf } from "lucide-react";
+import { ArrowRight, Calculator, LayoutGrid, Leaf, Package, ShoppingBag, Users } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { heroImages } from "@/data/heroes";
 import { products } from "@/data/products";
@@ -51,10 +51,10 @@ function getCategoryImpact(): CategoryImpact[] {
 }
 
 const stats = [
-  { label: "Produk Terjual", value: impact.productsSold, suffix: "" },
-  { label: "Pengrajin Lokal", value: impact.artisans, suffix: "" },
-  { label: "Jenis Produk", value: products.length, suffix: "" },
-  { label: "Kategori", value: categories.length, suffix: "" },
+  { icon: ShoppingBag, label: "Produk Terjual", value: impact.productsSold },
+  { icon: Users, label: "Pengrajin Lokal", value: impact.artisans },
+  { icon: Package, label: "Jenis Produk", value: products.length },
+  { icon: LayoutGrid, label: "Kategori", value: categories.length },
 ];
 
 export default function DampakPage() {
@@ -108,18 +108,21 @@ export default function DampakPage() {
       <section className="border-t border-line bg-sage-50 py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-            {stats.map(({ label, value, suffix }, index) => (
+{stats.map(({ icon: Icon, label, value }, index) => (
               <FadeIn key={label} delay={index * 80}>
-                <div className="flex h-full flex-col items-center gap-2 rounded-2xl border border-line bg-white p-6 text-center shadow-soft">
+                <div className="flex h-full flex-col items-center gap-2.5 rounded-2xl border border-line bg-white p-6 text-center shadow-soft">
+                  <span
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-sage-50 text-moss-600"
+                    aria-hidden="true"
+                  >
+                    <Icon className="h-5 w-5" strokeWidth={1.75} />
+                  </span>
                   <span className="text-4xl font-bold tracking-tight text-moss-600 sm:text-5xl">
                     {value.toLocaleString("id-ID")}
                   </span>
                   <span className="text-sm font-semibold uppercase tracking-wider text-ink-muted">
                     {label}
                   </span>
-                  {suffix && (
-                    <span className="text-xs text-ink-muted">{suffix}</span>
-                  )}
                 </div>
               </FadeIn>
             ))}
@@ -210,7 +213,7 @@ export default function DampakPage() {
           </FadeIn>
 
           {/* Catatan placeholder */}
-          <p className="mt-8 text-center text-xs leading-relaxed text-ink-muted">
+          <p className="mt-6 text-center text-[11px] leading-relaxed text-ink-muted">
             <Leaf className="mr-1 inline h-3.5 w-3.5 align-[-2px] text-sage-500" aria-hidden="true" />
             Angka contoh, akan diganti data asli.
           </p>

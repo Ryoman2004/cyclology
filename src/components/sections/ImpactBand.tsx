@@ -20,7 +20,7 @@ export function ImpactBand() {
   return (
     <section
       aria-label="Dampak Cyclology"
-      className="border-y border-line bg-sage-50 py-16 sm:py-24"
+      className="bg-sage-50 py-16 sm:py-24"
     >
       <div className="mx-auto flex max-w-300 flex-col items-center gap-8 px-4 text-center sm:px-6 lg:px-8">
         <p className="text-5xl font-bold tracking-tight text-moss-600 sm:text-6xl">

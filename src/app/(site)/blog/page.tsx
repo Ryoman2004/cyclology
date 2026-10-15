@@ -4,7 +4,6 @@ import { PageHero } from "@/components/sections/PageHero";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { FeaturedArticle } from "@/components/blog/FeaturedArticle";
 import { BlogFilter } from "@/components/blog/BlogFilter";
-import { BlogLiteracyBanner } from "@/components/blog/BlogLiteracyBanner";
 import { BlogCollabCTA } from "@/components/blog/BlogCollabCTA";
 import { siteConfig } from "@/config/site";
 import { heroImages } from "@/data/heroes";
@@ -83,9 +82,7 @@ export default function BlogPage() {
       </FadeIn>
 
       {/* Banner literasi */}
-      <FadeIn>
-        <BlogLiteracyBanner />
-      </FadeIn>
+      <FadeIn>      </FadeIn>
 
       {/* CTA kolaborasi */}
       <FadeIn>

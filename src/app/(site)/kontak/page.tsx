@@ -67,7 +67,7 @@ export default function KontakPage() {
       {/* Form + Kartu Info */}
       <section className="border-t border-line bg-sage-50 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-10">
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-5 lg:gap-10">
             {/* Form (3 kolom) */}
             <div className="lg:col-span-3">
               <SectionHeading
@@ -91,7 +91,7 @@ export default function KontakPage() {
             </div>
 
             {/* Kartu info (2 kolom) */}
-            <div className="flex flex-col gap-6 lg:col-span-2">
+            <div className="flex flex-col gap-6 lg:col-span-2 lg:justify-between">
               <FadeIn>
                 <div className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-6 shadow-soft">
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sage-50 text-moss-600">

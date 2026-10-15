@@ -12,7 +12,7 @@ export function BlogPreview() {
 
   return (
     <section className="border-t border-line bg-sage-50 py-16 sm:py-24">
-      <div className="mx-auto flex max-w-300px flex-col items-center gap-10 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-300 flex-col items-center gap-10 px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Kabar & Inspirasi Hijau"
           subtitle="Tips gaya hidup minim sampah dan cerita di balik karya upcycle."
