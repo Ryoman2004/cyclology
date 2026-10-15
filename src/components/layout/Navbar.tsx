@@ -101,17 +101,6 @@ export function Navbar({ minimal = false }: NavbarProps) {
             <span>Pesan via WhatsApp</span>
           </a>
 
-          {/* Avatar admin: tautan WhatsApp (design/home.png menampilkan avatar di sisi ini) */}
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Hubungi admin Cyclology via WhatsApp"
-            className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-line bg-sage-50 text-moss-600 transition-colors duration-150 hover:bg-sage-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2"
-          >
-            <MessageCircle className="h-4 w-4" aria-hidden="true" />
-          </a>
-
           {/* Mobile Hamburger Button */}
           {!minimal && (
             <button
