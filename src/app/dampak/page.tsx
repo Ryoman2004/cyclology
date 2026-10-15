@@ -51,7 +51,8 @@ function getCategoryImpact(): CategoryImpact[] {
 const stats = [
   { label: "Produk Terjual", value: impact.productsSold, suffix: "" },
   { label: "Pengrajin Lokal", value: impact.artisans, suffix: "" },
-  { label: "Kategori Produk", value: products.length, suffix: " jenis produk" },
+  { label: "Jenis Produk", value: products.length, suffix: "" },
+  { label: "Kategori", value: categories.length, suffix: "" },
 ];
 
 export default function DampakPage() {
@@ -104,7 +105,7 @@ export default function DampakPage() {
       {/* 3 kartu statistik */}
       <section className="border-t border-line bg-sage-50 py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {stats.map(({ label, value, suffix }, index) => (
               <FadeIn key={label} delay={index * 80}>
                 <div className="flex h-full flex-col items-center gap-2 rounded-2xl border border-line bg-white p-6 text-center shadow-soft">
@@ -130,7 +131,7 @@ export default function DampakPage() {
           <SectionHeading
             label="Sebaran Dampak"
             title="Dampak per Kategori Produk"
-            subtitle="Estimasi kg limbah yang diselamatkan, dihitung dari total impactKg selompok produk."
+            subtitle="Estimasi kg limbah yang diselamatkan, dihitung dari perkiraan berat bahan bekas pada setiap produk."
             align="left"
           />
 
@@ -187,24 +188,20 @@ export default function DampakPage() {
               </div>
               <div className="flex flex-col gap-4 text-sm leading-relaxed text-ink-muted">
                 <p>
-                  Setiap produk di katalog kami memiliki kolom{" "}
-                  <code className="rounded bg-sage-50 px-1.5 py-0.5 text-xs text-moss-600">
-                    impactKg
-                  </code>{" "}
-                  yang berisi estimasi berat bahan daur ulang yang digunakan
-                  untuk membuat satu unit produk tersebut.
+                  Setiap produk di katalog kami memiliki perkiraan berat bahan
+                  bekas yang dipakai untuk membuatnya. Angka perkiraan itu
+                  disimpan bersama detail produk.
                 </p>
                 <p>
-                  Angka di atas adalah jumlah seluruh <code className="rounded bg-sage-50 px-1.5 py-0.5 text-xs text-moss-600">impactKg</code>{" "}
-                  dari setiap produk dalam satu kategori, sehingga mencerminkan
-                  total kontribusi kategori tersebut terhadap pengurangan
-                  timbunan sampah.
+                  Angka di atas adalah jumlah perkiraan berat tersebut dari
+                  seluruh produk dalam satu kategori, sehingga mencerminkan total
+                  kontribusi kategori tersebut terhadap pengurangan timbunan
+                  sampah.
                 </p>
                 <p>
-                  Angka ini adalah estimasi berbasis berat material, bukan
-                  pengukuran ilmiah. Kami tidak mengklaim pengurangan emisi
-                  karbon tertentu karena belum tersedia metodologi yang
-                  terverifikasi.
+                  Angka ini adalah estimasi berdasarkan berat material, bukan
+                  hasil pengukuran laboratorium. Karena itu kami tidak
+                  menampilkan angka pengurangan emisi karbon.
                 </p>
               </div>
             </div>

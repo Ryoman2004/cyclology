@@ -93,12 +93,12 @@ export default function TentangPage() {
               <p className="max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
                 {siteConfig.name} berkomitmen menyelamatkan material sisa pakai
                 dan mentransformasi limbah tekstil menjadi perlengkapan artisan
-                bernilai tahan lama, sambil memberdayakan jejaring pengrajin
-                perempuan mandiri di Yogyakarta dan sekitarnya.
+                bernilai tahan lama, sambil mendukung pengrajin perempuan
+                mandiri di {siteConfig.location.city} dan sekitarnya.
               </p>
             </div>
 
-            {/* Kartu kecil "Atelier Terverifikasi" */}
+            {/* Kartu kecil "Dikerjakan Tangan" */}
             <div className="flex w-full max-w-sm shrink-0 items-start gap-3 rounded-2xl border border-line bg-white p-5 shadow-soft lg:mt-4">
               <span
                 className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sage-50 text-moss-600"
@@ -108,11 +108,11 @@ export default function TentangPage() {
               </span>
               <div className="flex flex-col gap-1">
                 <span className="text-xs font-semibold uppercase tracking-wider text-moss-600">
-                  Atelier Terverifikasi
+                  Dikerjakan Tangan
                 </span>
                 <p className="text-sm leading-relaxed text-ink-muted">
-                  Setiap karya ditelusuri riwayat bahannya, diupcycle minim air,
-                  dan dikerjakan secara etis di studio kami.
+                  Setiap karya memakai bahan dari barang bekas dan dikerjakan
+                  bertahap di studio kami.
                 </p>
               </div>
             </div>
@@ -128,7 +128,7 @@ export default function TentangPage() {
               {[
                 { icon: Recycle, label: "Limbah Daur Ulang" },
                 { icon: Users, label: "Pengrajin Lokal" },
-                { icon: Leaf, label: "Kemasan Nol Plastik" },
+                { icon: Leaf, label: "Bahan dari Barang Bekas" },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-3">
                   <span
@@ -173,7 +173,7 @@ export default function TentangPage() {
                   Perjalanan Mengembalikan Napas Barang Terlupakan
                 </h2>
                 <p className="text-base leading-relaxed text-ink-muted">
-                  {siteConfig.name} lahir di awal tahun 2022 dari kepedulian
+                  {siteConfig.name} lahir dari kepedulian
                   sederhana: melihat gunungan sisa kain garmen industri, selimut
                   terbungkus, serta limbah botol kaca yang menumpuk tanpa
                   kepastian di tempat pembuangan akhir. Padahal, di balik setiap
@@ -181,8 +181,8 @@ export default function TentangPage() {
                   belum tuntas diuji waktu.
                 </p>
                 <p className="text-base leading-relaxed text-ink-muted">
-                  Bersama sekelompok ibu rumah tangga dan pengrajin kriya di
-                  Kasongan dan Sleman, kami mulai mengurai, mencuci dengan sabun
+                  Bersama sekelompok ibu rumah tangga dan pengrajin kriya di{" "}
+                  {siteConfig.location.city}, kami mulai mengurai, mencuci dengan sabun
                   biji lerak alami, dan mendesain ulang sisa-sisa kain tersebut
                   menjadi tas harian tahan lama, pouch serbaguna, dan dekorasi
                   meja yang berkarakter. Kami membuktikan bahwa ekonomi sirkular
@@ -279,9 +279,11 @@ export default function TentangPage() {
                     <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-700">
                       {founder.role}
                     </span>
-                    <p className="text-sm leading-relaxed text-ink-muted">
-                      {founder.bio}
-                    </p>
+                    {founder.bio && (
+                      <p className="text-sm leading-relaxed text-ink-muted">
+                        {founder.bio}
+                      </p>
+                    )}
                   </div>
                 </article>
               </FadeIn>

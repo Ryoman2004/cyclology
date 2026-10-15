@@ -109,7 +109,7 @@ export default async function ProductDetailPage({
 
   const trustChips = [
     { icon: MessageCircle, label: "Konsultasi desain & jahitan" },
-    { icon: Truck, label: "Pengemasan ramah lingkungan" },
+    { icon: Truck, label: "Siap kirim ke seluruh Indonesia" },
     { icon: PackageCheck, label: "QC kualitas sebelum dikirim" },
   ];
 

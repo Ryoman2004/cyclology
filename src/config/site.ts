@@ -23,13 +23,13 @@ export const siteConfig = {
       name: "Syifa Aulia Akfina",
       role: "Co-Founder",
       photo: "/images/brand/founder-syifa.webp",
-      bio: "Kalimat singkat placeholder tentang peran di Cyclology.",
+      bio: "", // diisi pemilik; kosong berarti bio disembunyikan di UI
     },
     {
       name: "Syaza Ghaisani Nadinda",
       role: "Co-Founder",
       photo: "/images/brand/founder-syaza.webp",
-      bio: "Kalimat singkat placeholder tentang peran di Cyclology.",
+      bio: "", // diisi pemilik; kosong berarti bio disembunyikan di UI
     },
   ],
   // Bagian "Bengkel" di Galeri (peta + alamat). SEMUA DUMMY, diganti pemilik nanti.
@@ -38,6 +38,11 @@ export const siteConfig = {
     address: "Meruyung, Limo, Depok, Jawa Barat", // dummy
     hours: "Senin - Sabtu, 09.00 - 17.00 WIB", // dummy
     mapEmbedUrl: "https://maps.app.goo.gl/C2JG3fZ35JPS3vXV6", // isi dengan URL embed Google Maps asli
+  },
+  // Lokasi kota/provinsi. Semua teks halaman memakai nilai ini (REVISION aturan R0.2).
+  location: {
+    city: "Depok",
+    province: "Jawa Barat",
   },
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { SafeImage } from "@/components/ui/SafeImage";
-import { Leaf, ShoppingBag, Sparkles, Truck } from "lucide-react";
+import { Leaf, ShoppingBag, Sparkles } from "lucide-react";
 
 export function Hero() {
   return (
@@ -41,8 +41,8 @@ export function Hero() {
                 Pemesanan langsung &amp; ramah via WhatsApp
               </span>
               <span className="inline-flex items-center gap-2">
-                <Truck className="h-4 w-4 text-moss-600" aria-hidden="true" />
-                Pengiriman ramah lingkungan
+                <Leaf className="h-4 w-4 text-moss-600" aria-hidden="true" />
+                Dikurasi dari barang bekas
               </span>
             </div>
           </div>

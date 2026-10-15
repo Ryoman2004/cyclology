@@ -32,7 +32,7 @@ export function SafeImage({
           height: fill ? undefined : height,
         }}
         role="img"
-        aria-label={alt || "Placeholder gambar Cyclology"}
+        aria-label={alt || "Gambar Cyclology"}
       >
         <Leaf className="w-8 h-8 stroke-[1.5] text-sage-500 mb-1" />
         <span className="text-[11px] font-medium text-ink-muted text-center px-2 line-clamp-1">
