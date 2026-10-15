@@ -91,7 +91,7 @@ export function Footer() {
             >
               <div className="relative h-8 w-8 shrink-0">
                 <Image
-                  src="/brand/logo.svg"
+                  src="/brand/logo.png"
                   alt="Logo Cyclology"
                   fill
                   sizes="32px"

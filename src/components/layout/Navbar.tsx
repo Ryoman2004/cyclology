@@ -137,7 +137,7 @@ export function Navbar({ minimal = false }: NavbarProps) {
               <div className="flex items-center justify-between pb-6 border-b border-line">
                 <div className="flex items-center gap-2.5">
                   <Image
-                    src="/brand/logo.svg"
+                    src="/brand/logo.png"
                     alt="Logo Cyclology"
                     width={28}
                     height={28}

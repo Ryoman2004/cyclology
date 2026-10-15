@@ -43,7 +43,7 @@ src/
   config/site.ts            # Konfigurasi utama: nama, kontak, WA, statistik
   lib/                      # format.ts (rupiah, tanggal), whatsapp.ts
 public/
-  brand/logo.svg            # Logo Cyclology
+  brand/logo.png            # Logo Cyclology
   images/                   # Aset produk, blog, hero, galeri (WebP)
 ```
 
@@ -58,7 +58,7 @@ Buka `src/config/site.ts`, ubah `whatsappNumber` ke format internasional tanpa `
 Tambah, ubah, atau hapus entri di `src/data/products.ts`. Setiap produk harus punya `slug` unik; nama file gambar di `public/images/products/` mengikuti slug (`<slug>.webp`). Kategori dikelola di `src/data/categories.ts`. Halaman katalog dan detail akan mengikuti data tanpa perubahan kode.
 
 ### Mengganti logo
-Ganti file `public/brand/logo.svg` dengan logo baru (disarankan kotak 1:1). Navbar, footer, dan favicon otomatis memakai file ini.
+Ganti file `public/brand/logo.png` dengan logo baru (disarankan kotak 1:1). Navbar, footer, dan favicon otomatis memakai file ini.
 
 ### Data placeholder yang perlu diganti sebelum publikasi
 - `siteConfig.whatsappNumber`, `siteConfig.email`, `siteConfig.social.*`

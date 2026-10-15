@@ -22,7 +22,7 @@ const OUTPUT = path.join(ROOT, "docs", "MISSING_IMAGES.md");
 
 const SOURCE_EXT = [".ts", ".tsx", ".js", ".jsx", ".mjs"];
 /** Path yang selalu ada (dibuat manual, bukan aset foto). */
-const SKIP = ["/brand/logo.svg"];
+const SKIP = ["/brand/logo.png"];
 
 /** Direktori yang dipindai (R7: src/data, src/config, src/app, src/components). */
 const SCAN_DIRS = ["data", "config", "app", "components"];

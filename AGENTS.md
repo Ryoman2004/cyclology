@@ -35,7 +35,7 @@ src/
   lib/                      # format.ts (rupiah, tanggal), whatsapp.ts, seo.ts
 public/
   images/                   # products/, blog/, gallery/, hero/, brand/
-  brand/logo.svg            # logo placeholder, mudah diganti
+  brand/logo.png            # logo placeholder, mudah diganti
 design/                     # (opsional) hasil Google Stitch
 docs/
 ```

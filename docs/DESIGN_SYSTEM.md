@@ -126,7 +126,7 @@ Aturan:
 - Gaya: cahaya alami, latar netral hangat (kayu terang, linen, krem), produk terlihat jelas, tanpa filter berlebihan.
 - Rasio: produk 1:1, hero 4:3 atau 16:9, blog 16:10, galeri bebas (masonry).
 - Format target `.webp`, produk 800x800 px, hero 1600x900 px.
-- Logo: `public/brand/logo.svg` (placeholder: daun membentuk lingkaran panah). Dibuat sebagai file terpisah agar mudah diganti.
+- Logo: `public/brand/logo.png` (RGBA dengan latar transparan, 500x500 px). File terpisah agar mudah diganti. Warna logo mengikuti palet (`moss-600`/hijau tua). Di footer gelap dipakai filter `brightness-0 invert` agar tampak putih.
 
 ## 6. Gerak
 - Transisi hover/focus 150-200ms `ease-out`.

@@ -28,7 +28,7 @@ export function BrandLogo({
         style={{ height: iconSize, width: iconSize }}
       >
         <Image
-          src="/brand/logo.svg"
+          src="/brand/logo.png"
           alt="Logo Cyclology"
           fill
           sizes={`${iconSize}px`}
