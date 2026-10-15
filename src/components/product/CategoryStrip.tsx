@@ -67,13 +67,11 @@ export function CategoryStrip({
               >
                 <span
                   className={`flex h-14 w-14 items-center justify-center rounded-full transition-colors duration-150 ${
-                    isActive
-                      ? "bg-moss-600"
-                      : "bg-sage-50 group-hover:bg-sage-200"
+                    isActive ? "bg-sage-200" : "bg-sage-50 group-hover:bg-sage-200"
                   }`}
                 >
                   <Icon
-                    className={`h-6 w-6 ${isActive ? "text-white" : "text-moss-600"}`}
+                    className="h-6 w-6 text-moss-600"
                     strokeWidth={1.75}
                     aria-hidden="true"
                   />

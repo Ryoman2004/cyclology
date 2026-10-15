@@ -17,9 +17,9 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const badge =
     product.isNew
-      ? { label: "Baru", variant: "terracotta" as const }
+      ? { label: "BARU", variant: "terracotta" as const }
       : product.stock === "terbatas"
-        ? { label: "Terbatas", variant: "terracotta" as const }
+        ? { label: "TERBATAS", variant: "terracotta" as const }
         : null;
 
   return (
@@ -42,7 +42,7 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Label kategori */}
-      <p className="mt-4 text-xs italic text-ink-muted">
+      <p className="mt-3 text-xs italic text-ink-muted">
         {categoryNames[product.category] ?? product.category}
       </p>
 
@@ -65,7 +65,7 @@ export function ProductCard({ product }: ProductCardProps) {
       {/* Tombol detail (seluruh kartu diklik lewat stretched link) */}
       <Link
         href={`/produk/${product.slug}`}
-        className="mt-4 inline-flex min-h-9.5 w-full items-center justify-center gap-2 rounded-full border border-moss-600 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-moss-600 transition-colors duration-150 after:absolute after:inset-0 after:rounded-2xl after:content-[''] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2 group-hover:bg-sage-50"
+        className="mt-4 inline-flex min-h-9.5 w-full items-center justify-center gap-2 rounded-full bg-sage-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-moss-600 transition-colors duration-150 after:absolute after:inset-0 after:rounded-2xl after:content-[''] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2 group-hover:bg-sage-200"
       >
         <ShoppingBag className="h-4 w-4 shrink-0" aria-hidden="true" />
         Lihat Detail

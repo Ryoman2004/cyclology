@@ -9,8 +9,8 @@ export function CustomOrderCTA() {
   );
 
   return (
-    <section className="pb-16 sm:pb-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+    <section className="bg-sage-50 pb-16 sm:pb-24">
+      <div className="mx-auto max-w-300 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start gap-6 rounded-2xl bg-sage-200 px-6 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-10">
           <div className="flex items-start gap-4">
             <span

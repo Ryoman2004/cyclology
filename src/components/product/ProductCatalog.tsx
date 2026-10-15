@@ -63,6 +63,11 @@ export function ProductCatalog() {
       result = [...result].sort((a, b) => a.price - b.price);
     } else if (sort === "harga-desc") {
       result = [...result].sort((a, b) => b.price - a.price);
+    } else {
+      // "Terbaru": produk unggulan (featured) diurutkan lebih dahulu
+      result = [...result].sort(
+        (a, b) => Number(b.featured ?? false) - Number(a.featured ?? false)
+      );
     }
 
     return result;
@@ -96,7 +101,7 @@ export function ProductCatalog() {
   return (
     <>
       {/* Header katalog */}
-      <section className="border-b border-line bg-sage-50 py-8 sm:py-12">
+      <section className="bg-sage-50 py-8 sm:py-12">
         <div className="mx-auto max-w-300 px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "Produk" }]} className="mb-4" />
           <div className="grid grid-cols-1 items-end gap-4 lg:grid-cols-2">
@@ -104,7 +109,7 @@ export function ProductCatalog() {
               <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-700">
                 Kurasi Ramah Lingkungan
               </span>
-              <h1 className="text-2xl font-semibold leading-snug tracking-tight text-moss-600 sm:text-3xl lg:text-4xl">
+              <h1 className="text-2xl font-bold leading-snug tracking-tight text-moss-600 sm:text-3xl lg:text-4xl">
                 Katalog Semua Produk
               </h1>
             </div>
@@ -119,7 +124,7 @@ export function ProductCatalog() {
       </section>
 
       {/* Strip kategori + toolbar + grid */}
-      <section className="py-10 sm:py-14">
+      <section className="bg-sage-50 py-10 sm:py-14">
         <div className="mx-auto flex max-w-300 flex-col gap-8 px-4 sm:px-6 lg:px-8">
           <CategoryStrip showAll activeSlug={activeSlug} />
 
@@ -139,7 +144,7 @@ export function ProductCatalog() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Cari produk daur ulang..."
-                className="min-h-11 w-full rounded-xl border bg-white py-2.5 pl-11 pr-4 text-sm placeholder:text-ink-muted focus:border-moss-600 focus:outline-none focus:ring-2 focus:ring-sage-500"
+                className="min-h-11 w-full rounded-xl border border-line bg-white py-2.5 pl-11 pr-4 text-sm placeholder:text-ink-muted focus:border-moss-600 focus:outline-none focus:ring-2 focus:ring-sage-500"
               />
             </div>
 
