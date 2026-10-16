@@ -1,10 +1,11 @@
 import React from "react";
 import type { Metadata } from "next";
-import { ArrowRight, MessageCircle, Recycle, ShieldCheck, Truck } from "lucide-react";
+import { ArrowRight, MessageCircle, Recycle, Share2, ShieldCheck, Truck } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { heroImages } from "@/data/heroes";
 import { products } from "@/data/products";
 import { Button } from "@/components/ui/Button";
+import { ShareWhatsAppButton } from "@/components/share/ShareWhatsAppButton";
 import { PageHero } from "@/components/sections/PageHero";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SafeImage } from "@/components/ui/SafeImage";
@@ -97,6 +98,8 @@ export default function KampanyeBulanTanpaPlastikPage() {
     "Apakah paketnya masih tersedia?",
   ].join("\n");
   const waLink = buildWhatsAppLink(waMessage);
+  const shareText = `Yuk ikut Bulan Tanpa Plastik bersama ${siteConfig.name}!`;
+  const campaignPath = "/kampanye/bulan-tanpa-plastik";
 
   return (
     <main className="flex-1">
@@ -360,9 +363,20 @@ export default function KampanyeBulanTanpaPlastikPage() {
                 yang kami selamatkan minggu ini. Bergabunglah bersama puluhan
                 pemilik gaya hidup mindful lainnya.
               </p>
-              <Button variant="light" href={waLink} size="lg" icon={<ArrowRight className="h-4 w-4" />}>
-                Ambil Paket Hemat
-              </Button>
+<div className="flex flex-wrap items-center justify-center gap-3">
+                <Button variant="light" href={waLink} size="lg" icon={<ArrowRight className="h-4 w-4" />}>
+                  Ambil Paket Hemat
+                </Button>
+                <ShareWhatsAppButton
+                  path={campaignPath}
+                  text={shareText}
+                  variant="ghost"
+                  size="lg"
+                  icon={<Share2 className="h-4 w-4" />}
+                >
+                  Bagikan Kampanye
+                </ShareWhatsAppButton>
+              </div>
               <p className="inline-flex items-center gap-1.5 text-xs text-sage-200">
                 <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
                 Bebas konsultasi via WhatsApp &middot; Garansi jahitan rapi

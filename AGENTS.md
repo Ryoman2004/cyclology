@@ -45,26 +45,27 @@ docs/
 2. Seluruh teks tampilan dalam **Bahasa Indonesia**. Aksen Inggris singkat boleh jika menarik.
 3. Nomor WhatsApp, link sosial, nama brand, dan statistik **hanya** diambil dari `src/config/site.ts`. Jangan di-hardcode di komponen.
 4. Link WhatsApp dibuat lewat satu helper `buildWhatsAppLink(message)` di `src/lib/whatsapp.ts` (format `https://wa.me/<nomor>?text=<encodeURIComponent>`).
-5. Warna dan font hanya lewat design token. **Tidak ada nilai hex di dalam komponen.**
-6. Gambar selalu memakai `next/image` (dengan `sizes`, `alt` bermakna, dan `priority` hanya untuk hero). Buat komponen `SafeImage` dengan `onError` fallback ke blok placeholder berwarna tema, supaya situs tetap rapi sebelum foto asli dipasang.
-7. Tiap halaman mengekspor `metadata` (title, description, Open Graph). Halaman detail memakai `generateMetadata`.
-8. Mobile-first. Uji di lebar 390px, 768px, 1280px. Tidak boleh ada scroll horizontal.
-9. Aksesibilitas: HTML semantik, label pada form, focus ring terlihat, kontras teks memadai, tombol ikon punya `aria-label`.
-10. Tautan eksternal memakai `target="_blank" rel="noopener noreferrer"`. Jangan memakai `dangerouslySetInnerHTML`.
-11. Jangan mengarang statistik, kutipan, atau klaim ilmiah di konten edukasi. Tulis konten umum yang aman.
-12. Angka statistik dampak (`siteConfig.impact` dan `impactKg` produk) adalah placeholder. Di halaman `/dampak` beri catatan kecil "Angka contoh". Jangan menambah klaim lingkungan baru (mis. penghematan CO₂) yang tidak bisa dibuktikan.
-13. Hindari nilai acak (`Math.random`, `Date.now`) saat render supaya tidak terjadi hydration mismatch. Gunakan data deterministik.
-14. Jangan membuat fitur di luar `SPEC.md`. Jika ada ide tambahan, usulkan dulu.
-15. **Halaman Dashboard Analytics (`/dashboard`) dan Vercel Analytics dibatalkan.** Jangan membuatnya, jangan memasang paket analytics apa pun, dan jangan menautkan ke sana. Halaman Eco-Impact (`/dampak`) TETAP ada. Situs punya 10 halaman (lihat `SPEC.md` bagian 3).
-16. Desain Stitch di `design/` memuat teks contoh karangan. Aturannya:
+5. **Tombol bagikan memakai `buildWhatsAppShareLink(text)` (tanpa nomor admin)** lewat komponen client `ShareWhatsAppButton` (URL = `window.location.origin` + `path` saat diklik); `buildWhatsAppLink` hanya untuk pemesanan dan kontak.
+6. Warna dan font hanya lewat design token. **Tidak ada nilai hex di dalam komponen.**
+7. Gambar selalu memakai `next/image` (dengan `sizes`, `alt` bermakna, dan `priority` hanya untuk hero). Buat komponen `SafeImage` dengan `onError` fallback ke blok placeholder berwarna tema, supaya situs tetap rapi sebelum foto asli dipasang.
+8. Tiap halaman mengekspor `metadata` (title, description, Open Graph). Halaman detail memakai `generateMetadata`.
+9. Mobile-first. Uji di lebar 390px, 768px, 1280px. Tidak boleh ada scroll horizontal.
+10. Aksesibilitas: HTML semantik, label pada form, focus ring terlihat, kontras teks memadai, tombol ikon punya `aria-label`.
+11. Tautan eksternal memakai `target="_blank" rel="noopener noreferrer"`. Jangan memakai `dangerouslySetInnerHTML`.
+12. Jangan mengarang statistik, kutipan, atau klaim ilmiah di konten edukasi. Tulis konten umum yang aman.
+13. Angka statistik dampak (`siteConfig.impact` dan `impactKg` produk) adalah placeholder. Di halaman `/dampak` beri catatan kecil "Angka contoh". Jangan menambah klaim lingkungan baru (mis. penghematan CO₂) yang tidak bisa dibuktikan.
+14. Hindari nilai acak (`Math.random`, `Date.now`) saat render supaya tidak terjadi hydration mismatch. Gunakan data deterministik.
+15. Jangan membuat fitur di luar `SPEC.md`. Jika ada ide tambahan, usulkan dulu.
+16. **Halaman Dashboard Analytics (`/dashboard`) dan Vercel Analytics dibatalkan.** Jangan membuatnya, jangan memasang paket analytics apa pun, dan jangan menautkan ke sana. Halaman Eco-Impact (`/dampak`) TETAP ada. Situs punya 10 halaman (lihat `SPEC.md` bagian 3).
+17. Desain Stitch di `design/` memuat teks contoh karangan. Aturannya:
     - **Peta, alamat, dan jam bengkel BOLEH dipakai sebagai dummy**, tetapi harus diambil dari `siteConfig.workshop` supaya mudah diganti pemilik. Beri komentar `// dummy` di config.
     - Nomor telepon/WA dan link sosial hanya dari `siteConfig` (jangan salin nomor dari desain).
     - Jumlah pengrajin, produk, dan kg sampah harus konsisten di seluruh situs: satu angka untuk satu hal, bersumber dari `siteConfig.impact`.
     - Jangan memakai klaim penghematan CO₂ (mis. "ton CO₂e"); hapus atau ganti dengan teks netral.
-17. Folder `design/` hanya **acuan visual**, bukan aset situs. Jangan menyalin gambar dari `design/` ke situs dan **jangan memakai URL gambar eksternal** yang muncul di file HTML dari Stitch (bisa kedaluwarsa). Semua gambar situs berupa file lokal di `public/images/...` (nama file = slug) yang dimuat lewat `SafeImage`, sehingga situs tetap rapi bila foto belum ada.
-18. Jika `design/*.png` dan `design/*.html` berbeda, **PNG dari Figma adalah acuan final** (sudah melewati editan pemilik).
-19. Jika desain mobile (`mobile-*.png`) berbeda dari desain desktop atau `SPEC.md` dalam hal teks atau komponen, **`SPEC.md` dan desain desktop menang**; desain mobile hanya dipakai untuk tata letak. Headline hero tetap "Barang bekas, cerita baru."; tombol kartu produk tetap "LIHAT DETAIL"; judul seksi katalog tetap "Produk Katalog"; nama brand "Cyclology" dari `siteConfig`. Jangan membuat bottom navigation bar maupun kartu "traceability" atau "transparansi". Navigasi mobile = hamburger/drawer + tombol WhatsApp mengambang.
-20. **Teks UI tidak boleh memuat istilah kode atau klaim yang tidak bisa dibuktikan; angka dan lokasi hanya dari `siteConfig`.** Contoh yang dilarang di teks yang dilihat pengunjung: `impactKg`, `siteConfig`, `slug`, "placeholder", "Terverifikasi", "Kemasan Nol Plastik", "Zero-Plastic", penghematan CO₂, tahun berdiri, dan nama kota selain yang ada di `siteConfig.location`. Perlu diingat: jangan menulis angka atau nama kota langsung di komponen: jumlah produk = `products.length`, jumlah kategori = `categories.length`, jumlah artikel = `posts.length`, lokasi = `siteConfig.location` / `siteConfig.workshop`.
+18. Folder `design/` hanya **acuan visual**, bukan aset situs. Jangan menyalin gambar dari `design/` ke situs dan **jangan memakai URL gambar eksternal** yang muncul di file HTML dari Stitch (bisa kedaluwarsa). Semua gambar situs berupa file lokal di `public/images/...` (nama file = slug) yang dimuat lewat `SafeImage`, sehingga situs tetap rapi bila foto belum ada.
+19. Jika `design/*.png` dan `design/*.html` berbeda, **PNG dari Figma adalah acuan final** (sudah melewati editan pemilik).
+20. Jika desain mobile (`mobile-*.png`) berbeda dari desain desktop atau `SPEC.md` dalam hal teks atau komponen, **`SPEC.md` dan desain desktop menang**; desain mobile hanya dipakai untuk tata letak. Headline hero tetap "Barang bekas, cerita baru."; tombol kartu produk tetap "LIHAT DETAIL"; judul seksi katalog tetap "Produk Katalog"; nama brand "Cyclology" dari `siteConfig`. Jangan membuat bottom navigation bar maupun kartu "traceability" atau "transparansi". Navigasi mobile = hamburger/drawer + tombol WhatsApp mengambang.
+21. **Teks UI tidak boleh memuat istilah kode atau klaim yang tidak bisa dibuktikan; angka dan lokasi hanya dari `siteConfig`.** Contoh yang dilarang di teks yang dilihat pengunjung: `impactKg`, `siteConfig`, `slug`, "placeholder", "Terverifikasi", "Kemasan Nol Plastik", "Zero-Plastic", penghematan CO₂, tahun berdiri, dan nama kota selain yang ada di `siteConfig.location`. Perlu diingat: jangan menulis angka atau nama kota langsung di komponen: jumlah produk = `products.length`, jumlah kategori = `categories.length`, jumlah artikel = `posts.length`, lokasi = `siteConfig.location` / `siteConfig.workshop`.
 
 ## Larangan gaya ("AI slop")
 - Tidak ada gradient (background, teks, tombol, maupun bayangan berwarna).

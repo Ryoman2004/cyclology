@@ -12,3 +12,16 @@ export function buildWhatsAppLink(message?: string): string {
   }
   return `https://wa.me/${number}?text=${encodeURIComponent(message.trim())}`;
 }
+
+/**
+ * Membangun tautan WhatsApp TANPA nomor tujuan, dipakai untuk tombol bagikan
+ * supaya pengguna sendiri yang memilih penerima. Jangan pakai untuk pemesanan.
+ * @param text Pesan yang sudah memuat teks ringkasan dan URL halaman.
+ * @returns Format URL https://wa.me/?text=<encodedText>
+ */
+export function buildWhatsAppShareLink(text: string): string {
+  if (!text || text.trim() === "") {
+    return "https://wa.me/";
+  }
+  return `https://wa.me/?text=${encodeURIComponent(text.trim())}`;
+}

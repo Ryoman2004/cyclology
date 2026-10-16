@@ -67,7 +67,7 @@ export const siteConfig = {
   name: "Cyclology",
   tagline: "Dari bekas, jadi bermakna.",
   description: "Katalog produk daur ulang: tas, dompet, fashion, dekorasi, dan aksesoris karya pengrajin lokal.",
-  url: "https://cyclology.vercel.app",         // ganti setelah deploy
+  url: "https://cyclology-commerce.vercel.app", // domain produksi, ganti bila pindah domain
   whatsappNumber: "62XXXXXXXXXXX",             // format internasional, tanpa + dan tanpa 0 di depan
   email: "halo@cyclology.example",
   serviceHours: "Senin - Sabtu, 09.00 - 17.00 WIB",

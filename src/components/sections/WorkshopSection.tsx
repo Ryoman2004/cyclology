@@ -78,7 +78,7 @@ export function WorkshopSection() {
                 </span>
                 <div className="flex flex-col gap-1">
                   <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
-                    Alamat Bengkel
+                    Rumah Produksi
                   </span>
                   <span className="text-base font-semibold text-moss-600">
                     {workshop.address}
@@ -95,7 +95,7 @@ export function WorkshopSection() {
                 </span>
                 <div className="flex flex-col gap-1">
                   <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
-                    Jam Kunjungan
+                    Jam Kunjungan 
                   </span>
                   <span className="text-base font-semibold text-moss-600">
                     {workshop.hours}

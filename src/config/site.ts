@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Dari bekas, jadi bermakna.",
   description:
     "Katalog produk daur ulang: tas, dompet, fashion, dekorasi, dan aksesoris karya pengrajin lokal.",
-  url: "https://cyclology.vercel.app", // ganti setelah deploy
+  url: "https://cyclology-commerce.vercel.app", // domain produksi; ganti bila pindah domain
   whatsappNumber: "6285780870274", // format internasional, tanpa + dan tanpa 0 di depan
   email: "syifaauliaakfina@gmail.com",
   serviceHours: "Senin - Sabtu, 09.00 - 17.00 WIB",
@@ -21,7 +21,7 @@ export const siteConfig = {
   founders: [
     {
       name: "Syifa Aulia Akfina",
-      role: "Co-Founder",
+      role: "Founder",
       photo: "/images/brand/founder-syifa.webp",
       bio: "Fokus pada kurasi desain produk, eksplorasi material ramah lingkungan, serta riset kualitas kriya upcycle bersama komunitas bengkel lokal.", // diisi pemilik; kosong berarti bio disembunyikan di UI
     },

@@ -9,10 +9,10 @@ import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { BlogCard } from "@/components/ui/BlogCard";
+import { ShareWhatsAppButton } from "@/components/share/ShareWhatsAppButton";
 import { siteConfig } from "@/config/site";
 import { posts, type Post } from "@/data/posts";
 import { formatDate } from "@/lib/format";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 interface BlogDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -58,7 +58,7 @@ export default async function BlogDetailPage({
   if (!post) notFound();
 
   const articleUrl = `${siteConfig.url}/blog/${post.slug}`;
-  const shareMessage = `Baca artikel menarik dari ${siteConfig.name}:\n"${post.title}"\n${articleUrl}`;
+  const shareText = `Baca artikel ini di ${siteConfig.name}: ${post.title}`;
 
   // 3 artikel terkait: kategori sama lebih dulu, lalu sisanya.
   const relatedPosts = [
@@ -163,13 +163,13 @@ export default async function BlogDetailPage({
                 Bantu sebarkan inspirasi hijau ke lebih banyak orang.
               </p>
             </div>
-            <Button
-              variant="whatsapp"
-              href={buildWhatsAppLink(shareMessage)}
+            <ShareWhatsAppButton
+              path={`/blog/${post.slug}`}
+              text={shareText}
               icon={<Share2 className="h-4 w-4" />}
             >
               Bagikan via WhatsApp
-            </Button>
+            </ShareWhatsAppButton>
           </div>
         </div>
       </article>

@@ -52,7 +52,13 @@ public/
 Seluruh data nomor WhatsApp, kontak, media sosial, dan dampak lingkungan dikonfigurasi melalui `src/config/site.ts`. Semua komponen mengambil angka dan tautan dari sana — jangan hardcode di komponen.
 
 ### Mengganti nomor WhatsApp
-Buka `src/config/site.ts`, ubah `whatsappNumber` ke format internasional tanpa `+` dan tanpa `0` di depan. Contoh: `6281234567890`. Seluruh tombol dan form memakai helper `buildWhatsAppLink()` sehingga otomatis ikut berubah.
+Buka `src/config/site.ts`, ubah `whatsappNumber` ke format internasional tanpa `+` dan tanpa `0` di depan. Contoh: `6281234567890`. Tombol pemesanan, form kontak, dan tombol "Pesan via WhatsApp" memakai helper `buildWhatsAppLink()` sehingga otomatis ikut berubah.
+
+### Mengganti URL situs
+Buka `src/config/site.ts`, ubah `url` (tanpa garis miring di akhir). Nilai ini dipakai metadata, Open Graph, sitemap, robots, dan alamat produk yang ikut di pesan pemesanan. Semua halaman memakai `siteConfig.url` — jangan menulis domain langsung di komponen.
+
+### Tombol bagikan
+Tombol bagikan memakai komponen client `ShareWhatsAppButton` dan helper `buildWhatsAppShareLink()` yang membuka `https://wa.me/?text=...` **tanpa nomor admin**, jadi penerima dipilih pengunjung. URL yang dibagikan diambil dari domain yang sedang dipakai saat tombol diklik (`window.location.origin` + `path`, cadangan `siteConfig.url`).
 
 ### Mengganti produk
 Tambah, ubah, atau hapus entri di `src/data/products.ts`. Setiap produk harus punya `slug` unik; nama file gambar di `public/images/products/` mengikuti slug (`<slug>.webp`). Kategori dikelola di `src/data/categories.ts`. Halaman katalog dan detail akan mengikuti data tanpa perubahan kode.
